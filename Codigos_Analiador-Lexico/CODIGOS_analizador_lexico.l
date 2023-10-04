@@ -25,8 +25,7 @@
 ">"        { printf("Operador Relacional Mayor que: >.\n"); }
 "(=3"       { printf("Operador Relacional Menor igual que: (=3\n"); }
 "E=)"        { printf("Operador Relacional Mayor igual que: E=)\n"); }
-"W"         { printf("Operador Relacional: W\n"); }
-"!"         { printf("Operador Relacional diferente que: !\n"); }
+"W!"         { printf("Operador Relacional diferente que: W!\n"); }
 "<="        { printf("Asignación: <=\n"); }
 "UwU"       { printf("Delimitador: UwU\n"); }
 "("         { printf("Delimitador: (\n"); }
