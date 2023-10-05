@@ -62,14 +62,14 @@ Operadores aritméticos:
 - "/"
 
 Operadores relacionales:
-- "<"
-- ">"
-- "(=3"
-- "E=)"
-- "W!"
+- "<" (menor que)
+- ">" (mayor que)
+- "(=3" (menor o igual que)
+- "E=)" (mayor o igual que)
+- "W!" (diferente de )
 
 Asignación
-- "<="
+- "<=" (igual a)
 
 Delimitadores:
 - "UwU"
