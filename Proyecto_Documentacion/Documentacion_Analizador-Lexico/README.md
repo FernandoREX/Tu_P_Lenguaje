@@ -4,7 +4,7 @@
 <br>
 <br>
 <p align="center">
-  <img src="CaratulaAL.jpg" alt="Bob" width="300"/>
+  <img src="CaratulaAL.jpg" alt="Bob" width="3000"/>
 </p>
 <br>
 <br>
