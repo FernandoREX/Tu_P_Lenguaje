@@ -10,7 +10,7 @@
 <br>
 </div>
 
-## Introduccion
+## Introducción
 
 Un analizador léxico o scanner, es un programa que analiza el texto fuente de un programa informático y lo divide en unidades más pequeñas, llamadas tokens. Estas unidades son los elementos básicos de un lenguaje de programación, como palabras reservadas, identificadores, operadores, literales, etc.
 
@@ -25,7 +25,6 @@ Un scanner se puede desarrollar con distintos métodos:
 <div align="center">
 <br>
 <br>
-Funcionamiento de Analizador Léxico:
 <p align="center">
   <img src="ALFuncionamiento.jpg" alt="Bob" width="500"/>
 </p>
@@ -43,7 +42,48 @@ La hipótesis
 
 ## Desarrollo
 
-Para la construcción del lenguaje "Tu_P_L"
+Para la construcción del lenguaje "Tu_P_L" primero se tiene que definir cómo será el lenguaje.
+
+Se definió lo siguiente.
+
+Palabras reservadas:
+-	entero
+-	buleano
+-	flotante
+-	SI
+-	EntonCes
+-	Para
+-	MiEntras
+Operadores aritméticos:
++
+*
+-
+/
+Operadores relacionales:
+<
+>
+(=3
+E=)
+W!
+Asignación
+<=
+Delimitadores:
+UwU
+(
+)
+Espacios
+\t
+\n
+“ “
+Variable
+.|.
+Cadena
+CaD
+Número
+[0-9]+
+Función
+:-*
+
 
 ```c
 # Esto es un bloque de código en C
