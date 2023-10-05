@@ -1,30 +1,19 @@
 
-## Carátula para Entrega de Prácticas                  
+## TU_P_L            
 
-| **Facultad de Ingeniería**|
+|**Facultad de Ingeniería**|
 
 
-- **Profesor:** Nombre del Profesor
-- **Asignatura:** Nombre de la Asignatura
-- **Grupo:** Nombre o Número del Grupo
-- **Número de Práctica:** Número de la Práctica
-- **Integrantes:** Nombre del Estudiante 1, Nombre del Estudiante 2, ...
-- **Semestre:** Semestre Actual
-- **Fecha de Entrega:** Fecha de Entrega de la Práctica
-- **Observaciones:** Cualquier observación relevante sobre la práctica.
-    - **Calificacion:**
+- **Profesor:** René Adrián Dávila Pérez
+- **Asignatura:** COMPILADORES
+- **Grupo:** 4
+- **Semestre:** 2024-1
 
-## Introduccion
- Presentar el panorama del documendo y describir que es lo que se esta presentando
 
-## Hipotesis
+En este repositorio se subirán los entregables de la materia de compiladores.
 
-## Desarrollo
-no copiar y pegar el codigo, tomar fregmentos importantes del codigo
+El objetivo es crear un compilador de un lenguaje de programación llamado "Tu_P_L", lenguaje que usa el idoma español.
+Al final del curso se podrá compilar y ejecutar código fuente escrito en este lenguaje.
 
-```python
-# Esto es un bloque de código en Python
-print("Hola, mundo, esta es una prueba!")
-
-## Referencias
->>>>>>> Stashed changes
+"Proyecto_Nombre-Proyecto": Aquí se subirán los códigos del proyecto
+"Documentación_Nombre-Proyecto": Aquí se subirá la documentación del proyecto

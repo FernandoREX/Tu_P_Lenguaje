@@ -27,7 +27,7 @@ Un scanner se puede desarrollar con distintos métodos:
 <br>
 Funcionamiento de Analizador Léxico:
 <p align="center">
-  <img src="ALFuncionamiento.jpg" alt="Bob" width="300"/>
+  <img src="ALFuncionamiento.jpg" alt="Bob" width="500"/>
 </p>
 <br>
 <br>
@@ -48,6 +48,7 @@ Para la construcción del lenguaje "Tu_P_L"
 ```c
 # Esto es un bloque de código en C
 printf("Hola, mundo, esta es una prueba!");
+```
 
 ## Referencias
 >>>>>>> Stashed changes
