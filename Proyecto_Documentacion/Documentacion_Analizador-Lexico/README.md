@@ -1,17 +1,14 @@
-## Carátula para Entrega de Prácticas   (SE REMPLAZARA POR IMAGEN)           
+## Carátula para Entrega de Prácticas   (SE ACTUALIZARÁ)           
 
-| **Facultad de Ingeniería**|
-
-
-- **Profesor:** René Adrián Dávila Pérez
-- **Asignatura:** Compiladores
-- **Grupo:** 4
-- **Número de Práctica:** Número de la Práctica
-- **Integrantes:** 315118894
-- **Semestre:** Séptimo
-- **Fecha de Entrega:** 05 de Octubre de 2023
-- **Observaciones:** Cualquier observación relevante sobre la práctica.
-    - **Calificacion:**
+<div align="center">
+<br>
+<br>
+<p align="center">
+  <img src="CaratulaAL.jpg" alt="Bob" width="300"/>
+</p>
+<br>
+<br>
+</div>
 
 ## Introduccion
 
