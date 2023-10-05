@@ -44,7 +44,7 @@ La hipótesis
 
 Para la construcción del lenguaje "Tu_P_L" primero se tiene que definir cómo será el lenguaje.
 
-Se definió lo siguiente.
+Se definio lo siguiente.
 
 Palabras reservadas:
 -	entero
@@ -55,10 +55,10 @@ Palabras reservadas:
 -	Para
 -	MiEntras
 Operadores aritméticos:
-+
-*
--
-/
+- +
+- *
+- -
+- /
 Operadores relacionales:
 <
 >
