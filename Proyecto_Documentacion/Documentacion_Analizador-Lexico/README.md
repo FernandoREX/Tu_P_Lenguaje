@@ -54,6 +54,7 @@ Palabras reservadas:
 -	"EntonCes"
 -	"Para"
 -	"MiEntras"
+
 Operadores aritméticos:
 - "+"
 - "*"
