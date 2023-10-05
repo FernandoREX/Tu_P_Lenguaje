@@ -10,7 +10,7 @@
 <br>
 </div>
 
-### Introduccion
+## Introduccion
 
 Un analizador léxico o scanner, es un programa que analiza el texto fuente de un programa informático y lo divide en unidades más pequeñas, llamadas tokens. Estas unidades son los elementos básicos de un lenguaje de programación, como palabras reservadas, identificadores, operadores, literales, etc.
 
@@ -33,20 +33,21 @@ Funcionamiento de Analizador Léxico:
 <br>
 </div>
 
-En este trabajo se expondrá un analizador léxico (scanner) que procesa un lenguaje llamado “Tu_P_Lenguaje”, un lenguaje en español. Para este proyecto se hará uso de la herramienta “FLEX”, ya que hacer un autómata finito es una tarea increíblemente laboriosa y FLEX proporciona las herramientas necesarias para construir de forma sencilla el analizador léxico. 
+En este trabajo se expondrá un analizador léxico (scanner) que procesa un lenguaje llamado “Tu_P_L”, un lenguaje en español. Para este proyecto se hará uso de la herramienta “FLEX”, ya que hacer un autómata finito es una tarea increíblemente laboriosa y FLEX proporciona las herramientas necesarias para construir de forma sencilla el analizador léxico. 
 
 
 
-## Hipotesis
+### Hipotesis
 
 La hipótesis
 
 ## Desarrollo
-no copiar y pegar el codigo, tomar fregmentos importantes del codigo
 
-```python
-# Esto es un bloque de código en Python
-print("Hola, mundo, esta es una prueba!")
+Para la construcción del lenguaje "Tu_P_L"
+
+```c
+# Esto es un bloque de código en C
+printf("Hola, mundo, esta es una prueba!");
 
 ## Referencias
 >>>>>>> Stashed changes
