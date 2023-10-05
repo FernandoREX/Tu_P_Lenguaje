@@ -38,7 +38,9 @@ En este trabajo se expondrá un analizador léxico (scanner) que procesa un leng
 
 ### Hipotesis
 
-La hipótesis
+La implementación exitosa de un analizador léxico en C permitirá procesar el código fuente de programas escritos en el lenguaje Tu_P_L, identificando y clasificando correctamente los tokens, incluyendo palabras reservadas, identificadores, números y símbolos, de acuerdo con las reglas de la gramática del lenguaje. 
+ 
+ Además, el analizador léxico será capaz de proporcionar mensajes de error informativos cuando se encuentren tokens inválidos o estructuras de código incorrectas.
 
 ## Desarrollo
 
