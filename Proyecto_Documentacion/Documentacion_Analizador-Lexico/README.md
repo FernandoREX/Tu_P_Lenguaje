@@ -52,11 +52,12 @@ Se espera que el analizador léxico funcione de manera eficiente incluso para pr
 
 ## Desarrollo
 
-Para la construcción del lenguaje "Tu_P_L" primero se tiene que definir cómo será el lenguaje.
+Para la construcción del lenguaje "Tu_P_L" primero se tiene que definir cómo será el lenguaje. este lenjuage se escogio por parte de los integrantes del equipo y se propuso lo siguiente
 
-Se definio lo siguiente.
+### Lenguaje
+Primero se definio los tokens o elementos léxicos del lenguaje. Esto incluye palabras reservadas, operadores, delimitadores, tipos de datos, identificadores, números y cualquier otro elemento que sea significativo en el lenguaje. Cada token se define utilizando expresiones regulares o patrones que describen cómo se ven y cómo se deben reconocer.
 
-Palabras reservadas:
+**Palabras reservadas:**
 -	"entero"
 -	"buleano"
 -	"flotante"
@@ -65,49 +66,81 @@ Palabras reservadas:
 -	"Para"
 -	"MiEntras"
 
-Operadores aritméticos:
+**Operadores aritméticos:**
 - "+"
 - "*"
 - "-"
 - "/"
 
-Operadores relacionales:
+**Operadores relacionales:**
 - "<" (menor que)
 - ">" (mayor que)
 - "(=3" (menor o igual que)
 - "E=)" (mayor o igual que)
 - "W!" (diferente de )
 
-Asignación
+**Asignación**
 - "<=" (igual a)
 
-Delimitadores:
+**Delimitadores:**
 - "UwU"
 - "("
 - ")"
 
-Espacios
+**Espacios**
 - "\t"
 - "\n"
 - “ “
 
-Variable
+**Variable**
 - ".|."
 
-Cadena
+**Cadena**
 - "CaD"
 
-Número
+**Número**
 - "[0-9]+"
 
-Función
+**Función**
 - ":-*"
 
+### Uso deHerramientas
 
-```c
-# Esto es un bloque de código en C
-printf("Hola, mundo, esta es una prueba!");
+FLEX es un analizador léxico bajo licencia GPL. Cada vez que se encuentre uno de los patrones especificados en FLEX se puede ejecutar un conjunto de acciones asociadas. FLEX es el analizador de dominio público compatible con el analizador léxico más frecuentemente utilizado: LEX (bajo sistema UNIX). FLEX (y LEX) genera, dada una especificación correcta de patrones y acciones, un programa en lenguaje C que puede ser compilado para obtener un programa ejecutable. [1](https://www.ejemplo.com/)
+
+los tipo de Tokens usados seran
+```l
+%x CADENA
+%x FUNCION
+%x TERMINAL
+%x TERMINALL
+%x VARIABLE
 ```
 
+**Definimos las Reglas**
+En el archivo ".l", se escribieron las reglas que coinciden con los patrones de tus tokens definidos con anterioridad. Cada regla tiene la siguiente estructura:
+```l
+  patrón { acción }
+```
+-El "patrón" es una expresión regular que describe cómo se ve un token específico.
+-La "acción" es un código C que se ejecutará cuando se encuentre un token que coincida con el patrón.
+
+tomando un Fragmento de nuestro archivo flex 
+```l
+  "entero"    { printf("Palabra reservada: entero\n"); }
+  "buleano"   { printf("Palabra reservada: buleano\n"); }
+  "flotante"  { printf("Palabra reservada: flotante\n"); }
+```
+Dentro de las acciones de las reglas de Flex, se debe especificar cómo se manejarán los tokens reconocidos. Esto puede incluir la devolución del token al programa principal para su procesamiento o almacenamiento en una tabla de símbolos. En esta etapa, también puedes realizar acciones adicionales, como la conversión de números de cadena a valores numéricos, una excepcion que utilizaremos en nuestro lenguaje sera el ignorar los espacion en blanco en la escritura del codigo
+```l
+  " "         { /* Ignorar espacios en blanco */ }
+```
+## Pruebas
+
+
+
+
 ## Referencias
+[1] García Fernández, Luis Amable, and María Gloria Martínez Vidal. "Primera práctica: Introducción al Analizador Léxico FLEX." [EN LINEA] Disponible en https://repositori.uji.es/xmlui/bitstream/handle/10234/5998/Primera_Practica_IS17_Curso_06_07.pdf?sequence=1 [Accedido: 1 Octubre 2023]
+
 >>>>>>> Stashed changes
