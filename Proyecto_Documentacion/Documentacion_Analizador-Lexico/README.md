@@ -10,7 +10,7 @@
 <br>
 </div>
 
-## Introduccion
+### Introduccion
 
 Un analizador léxico o scanner, es un programa que analiza el texto fuente de un programa informático y lo divide en unidades más pequeñas, llamadas tokens. Estas unidades son los elementos básicos de un lenguaje de programación, como palabras reservadas, identificadores, operadores, literales, etc.
 
