@@ -24,7 +24,7 @@ no copiar y pegar el codigo, tomar fregmentos importantes del codigo
 
 ```python
 # Esto es un bloque de código en Python
-print("Hola, mundo!")
+print("Hola, mundo, esta es una prueba!")
 
 ## Referencias
 >>>>>>> Stashed changes
