@@ -60,30 +60,38 @@ Operadores aritméticos:
 - "*"
 - "-"
 - "/"
+
 Operadores relacionales:
-<
->
-(=3
-E=)
-W!
+- "<"
+- ">"
+- "(=3"
+- "E=)"
+- "W!"
+
 Asignación
-<=
+- "<="
+
 Delimitadores:
-UwU
-(
-)
+- "UwU"
+- "("
+- ")"
+
 Espacios
-\t
-\n
-“ “
+- "\t"
+- "\n"
+- “ “
+
 Variable
-.|.
+- ".|."
+
 Cadena
-CaD
+- "CaD"
+
 Número
-[0-9]+
+- "[0-9]+"
+
 Función
-:-*
+- ":-*"
 
 
 ```c
