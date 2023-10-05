@@ -47,18 +47,18 @@ Para la construcción del lenguaje "Tu_P_L" primero se tiene que definir cómo s
 Se definio lo siguiente.
 
 Palabras reservadas:
--	entero
--	buleano
--	flotante
--	SI
--	EntonCes
--	Para
--	MiEntras
+-	"entero"
+-	"buleano"
+-	"flotante"
+-	"SI"
+-	"EntonCes"
+-	"Para"
+-	"MiEntras"
 Operadores aritméticos:
-- +
-- *
-- -
-- /
+- "+"
+- "*"
+- "-"
+- "/"
 Operadores relacionales:
 <
 >
