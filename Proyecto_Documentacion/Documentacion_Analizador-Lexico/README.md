@@ -1,5 +1,3 @@
-## Carátula para Entrega de Prácticas   (SE ACTUALIZARÁ)           
-
 <div align="center">
 <br>
 <br>
@@ -36,7 +34,7 @@ En este trabajo se expondrá un analizador léxico (scanner) que procesa un leng
 
 
 
-## Hipotesis
+### Hipotesis
 La implementación de un analizador léxico para el lenguaje específico propuesto permitirá analizar y dividir de manera efectiva y precisa el código fuente escrito en este lenguaje en una secuencia de tokens, que incluirán palabras reservadas, operadores aritméticos y relacionales, asignaciones, delimitadores, espacios, variables, cadenas, números y funciones, según las reglas de la gramática definida para este lenguaje.
 ### Objetivos y Expectativas del Analizador Léxico:
 1. **Reconocimiento de Palabras Reservadas:** El analizador léxico deberá identificar y clasificar correctamente las palabras reservadas, como "entero," "buleano," "flotante," "SI," "EntonCes," "Para," y "MiEntras." Estas palabras reservadas serán tokens fundamentales para definir la estructura y el flujo del programa.
@@ -52,7 +50,7 @@ Se espera que el analizador léxico funcione de manera eficiente incluso para pr
 
 ## Desarrollo
 
-Para la construcción del lenguaje "Tu_P_L" primero se tiene que definir cómo será el lenguaje. este lenjuage se escogio por parte de los integrantes del equipo y se propuso lo siguiente
+Para la construcción del lenguaje "Tu_P_L" primero se tiene que definir cómo será el lenguaje, este lenjuage se escogio por parte de los integrantes del equipo y se propuso lo siguiente
 
 ### Lenguaje
 Primero se definio los tokens o elementos léxicos del lenguaje. Esto incluye palabras reservadas, operadores, delimitadores, tipos de datos, identificadores, números y cualquier otro elemento que sea significativo en el lenguaje. Cada token se define utilizando expresiones regulares o patrones que describen cómo se ven y cómo se deben reconocer.
@@ -83,7 +81,7 @@ Tu_P_Lenguaje permitirá realizar las operaciones aritméticas básicas. Estos s
 - "E=)" (mayor o igual que)
 - "W!" (diferente de )
   
-Este token define las distintas comparaciones que se pueden hacer entre los operandos.
+Estos tokens definen las distintas comparaciones que se pueden hacer entre los operandos.
 
 **Asignación**
 - "<=" (igual a)
@@ -102,7 +100,7 @@ Sirven para agrupar elementos o delimitar el fin de alguna estructura.
 - "\n"
 - “ “
 
-Para los espacios en blanco (tabuladores y espacios) y los saltos de linea. En Tu_P_Lenguaje estos caracteres no tienen significado ningún significado especial para el lenguaje. 
+Para los espacios en blanco (tabuladores y espacios) y los saltos de linea. En Tu_P_Lenguaje estos caracteres no tienen significado especial para el lenguaje y deberá ignorarlos. 
 
 **Variable**
 - ".|."[a-ZA-Z0-9]
