@@ -160,7 +160,15 @@ los tipo de Tokens usados seran
 %x TERMINALL
 %x VARIABLE
 ```
-
+```l
+RESERVADAS "entero"|"buleano"|"flotante"|"SI"|"EntoCes"|"Para"|"MiEntras"
+OP_ARITMETICO "+"|"-"|"*"|"/"
+OP_RELACIONAL  "<"|">"|"(=3"|"E=)"|"!W"
+ASIGNACION "<="
+DELIMITADOR "UwU"|"("|")"|";"
+ESPACIOBLANCO " "|"\t"
+NUMERO [0-9]
+```
 --------------------------------------------------------------------------------------
 
 **Definimos las Reglas**
@@ -168,14 +176,19 @@ En el archivo ".l", se escribieron las reglas que coinciden con los patrones de 
 
 tomando un Fragmento de nuestro archivo flex 
 ```l
-  "entero"    { printf("Palabra reservada: entero\n"); }
-  "buleano"   { printf("Palabra reservada: buleano\n"); }
-  "flotante"  { printf("Palabra reservada: flotante\n"); }
+{RESERVADAS} { printf("Palabra reservada: %s\n",yytext); }
+{OP_ARITMETICO}         { printf("Operador Aritmético: %s\n",yytext); }
+{OP_RELACIONAL}       { printf("Operador Relacional: %s \n",yytext); }
 ```
-Dentro de las acciones de las reglas de Flex, se debe especificar cómo se manejarán los tokens reconocidos. Esto puede incluir la devolución del token al programa principal para su procesamiento o almacenamiento en una tabla de símbolos. En esta etapa, también puedes realizar acciones adicionales, como la conversión de números de cadena a valores numéricos, una excepcion que utilizaremos en nuestro lenguaje sera el ignorar los espacion en blanco en la escritura del codigo
+Dentro de las acciones de las reglas de Flex, se debe especificar cómo se manejarán los tokens reconocidos. Esto puede incluir la devolución del token al programa principal para su procesamiento o almacenamiento en una tabla de símbolos.
+En este caso las palabara RESERVADAS, OP_ARITMETCA y OP_RELACIONAL son los tokens que va a reconocer el lenguaje. La accion que va a realiza en esta primera etapa sera imprimir en pantalla el nombre del token junto con su valor.
+
+En esta etapa, también puedes realizar acciones adicionales, como la conversión de números de cadena a valores numéricos, una excepcion que utilizaremos en nuestro lenguaje sera el ignorar los espacion en blanco en la escritura del codigo.
+
 ```l
-  " "         { /* Ignorar espacios en blanco */ }
+{ESPACIOBLANCO} {/* Ignorar */}
 ```
+Lo que se encuentra entre llaves es simplemente un comentario en C, entonces al leer un conjunto de espacios o tabuladores el analizador léxico lo va a consumir y no va a realizar ninguna accion (los va a "ignorar")
 ## Conclusiones
 
 
