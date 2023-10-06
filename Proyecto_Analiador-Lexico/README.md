@@ -1,4 +1,4 @@
-##Analizador Léxico TU_P_L
+## Analizador Léxico TU_P_L
 
 Para la ejecución de este analizador es necesario instalar FLEX. 
 
@@ -18,7 +18,7 @@ y lo siguiente para ejecutar
 A continuación se muestran ejemplos de ejecución del analizador.
 
 
-###Entradas válidas
+### Entradas válidas
 <div align="center">
 <br>
 <br>
@@ -45,7 +45,7 @@ A continuación se muestran ejemplos de ejecución del analizador.
 <br>
 
 
-###Entradas no válidas
+### Entradas no válidas
 <br>
 <br>
 <p align="center">
