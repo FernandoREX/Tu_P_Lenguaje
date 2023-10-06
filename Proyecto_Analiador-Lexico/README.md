@@ -1,6 +1,6 @@
 ## Analizador Léxico TU_P_L
 
-Para la ejecución de este analizador es necesario instalar FLEX. 
+Para la ejecución de este analizador es necesario instalar FLEX. Puede seguirse el siguiente tutorial para la instalación https://www.youtube.com/watch?v=nFGcPlW_rOw&t=392s
 
 Es neceario ingresar la siguiente línea de código para compilar el analizador
 
