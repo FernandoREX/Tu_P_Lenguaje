@@ -122,7 +122,7 @@ Este para reconocer número, especificamente, numeros enteros. Esta versión del
 
 Token para reconocer funciones válidas del lenguaje. Sería como el equivalente a la palabra "def" que se utiliza en Python.
 
-### Uso deHerramientas
+### Uso de Herramientas
 
 FLEX es un analizador léxico bajo licencia GPL. Cada vez que se encuentre uno de los patrones especificados en FLEX se puede ejecutar un conjunto de acciones asociadas. FLEX es el analizador de dominio público compatible con el analizador léxico más frecuentemente utilizado: LEX (bajo sistema UNIX). FLEX (y LEX) genera, dada una especificación correcta de patrones y acciones, un programa en lenguaje C que puede ser compilado para obtener un programa ejecutable. [1](https://www.ejemplo.com/)
 
@@ -135,7 +135,7 @@ Reglas
 %%
 Código del usuario
 ```
-En la seccion de definiciones se colocan, entre otras cosas, declaraciones de nombres sencillos que tienen la finalidad de simplificar la especificación del analizador léxico.
+En la seccion de definiciones se colocan, entre otras cosas, declaraciones de nombres sencillos que tienen la finalidad de simplificar la especificación del analizador léxico.[2]
 
 En la sección de reglas es donde se escriben los patrones que va a reconocer asi como las acciones que se van a realizar una vez que el analizador encuentre alguna cadena que coincida con dichos patrones. Las reglas que se definan aquí deben de tener la estructura
 
@@ -148,17 +148,9 @@ En la sección de reglas es donde se escriben los patrones que va a reconocer as
 
 Finalmente, en la sección de código de usuario se puede escribir cualquier código en C que necesite el usuario para su analizador.
 
------------------------------------ VERIFICAR --------------------------------------------
 
 los tipo de Tokens usados seran
-```l
-%x CADENA
-%x FUNCION
-%x TERMINAL
-%x TERMINALL
-%x VARIABLE
-```
-cambiar por 
+
 ```l
 RESERVADAS "entero"|"buleano"|"flotante"|"SI"|"EntoCes"|"Para"|"MiEntras"
 OP_ARITMETICO "+"|"-"|"*"|"/"
@@ -168,7 +160,6 @@ DELIMITADOR "UwU"|"("|")"|";"
 ESPACIOBLANCO " "|"\t"
 NUMERO [0-9]
 ```
---------------------------------------------------------------------------------------
 
 **Definimos las Reglas**
 En el archivo ".l", se escribieron las reglas que coinciden con los patrones de tus tokens definidos con anterioridad.
@@ -187,7 +178,7 @@ En esta etapa, también puedes realizar acciones adicionales, como la conversió
 ```l
 {ESPACIOBLANCO} {/* Ignorar */}
 ```
-Lo que se encuentra entre llaves es simplemente un comentario en C, entonces al leer un conjunto de espacios o tabuladores el analizador léxico lo va a consumir y no va a realizar ninguna accion (los va a "ignorar")
+Lo que se encuentra entre llaves es simplemente un comentario en C, entonces al leer un conjunto de espacios o tabuladores el analizador léxico lo va a consumir y no va a realizar ninguna accion (los va a "ignorar").
 
 ## Conclusiones
 
@@ -195,9 +186,9 @@ El desarrollo de un analizador léxico utilizando la herramienta Flex es un paso
 
 Algunos de los aspectos clave a tener en cuenta en el desarrollo de un analizador léxico con Flex incluyen la definición de reglas para reconocer patrones léxicos, la asignación de valores y la devolución de tokens, así como la gestión de errores. Además, es importante que el analizador sea eficiente y capaz de manejar de manera adecuada el flujo de entrada.
 
-En conclucion un analizador léxico bien desarrollado y probado es crucial para el éxito de proyectos de compilación o interpretación, ya que garantiza que el código fuente se interprete o compile de manera correcta y eficiente. Además, una documentación adecuada del analizador léxico facilita su uso y mantenimiento en proyectos futuros
+En conclusión un analizador léxico bien desarrollado y probado es crucial para el éxito de proyectos de compilación o interpretación, ya que garantiza que el código fuente se interprete o compile de manera correcta y eficiente. Además, una documentación adecuada del analizador léxico facilita su uso y mantenimiento en proyectos futuros.
 
 ## Referencias
 [1] García Fernández, Luis Amable, and María Gloria Martínez Vidal. "Primera práctica: Introducción al Analizador Léxico FLEX." [EN LINEA] Disponible en https://repositori.uji.es/xmlui/bitstream/handle/10234/5998/Primera_Practica_IS17_Curso_06_07.pdf?sequence=1 [Accedido: 1 Octubre 2023]
-
+[2] Paxson Vern. "Flex, version 2.5". USA: THe Regents of the Univerity of California, 1990.
 
