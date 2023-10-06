@@ -50,10 +50,10 @@ Se espera que el analizador léxico funcione de manera eficiente incluso para pr
 
 ## Desarrollo
 
-Para la construcción del lenguaje "Tu_P_L" primero se tiene que definir cómo será el lenguaje, este lenjuage se escogio por parte de los integrantes del equipo y se propuso lo siguiente
+Para la construcción del lenguaje "Tu_P_L" primero se tiene que definir cómo será el lenguaje, este lenguaje se escogió por parte de los integrantes del equipo y se propuso lo siguiente
 
 ### Lenguaje
-Primero se definio los tokens o elementos léxicos del lenguaje. Esto incluye palabras reservadas, operadores, delimitadores, tipos de datos, identificadores, números y cualquier otro elemento que sea significativo en el lenguaje. Cada token se define utilizando expresiones regulares o patrones que describen cómo se ven y cómo se deben reconocer.
+Primero se definió los tokens o elementos léxicos del lenguaje. Esto incluye palabras reservadas, operadores, delimitadores, tipos de datos, identificadores, números y cualquier otro elemento que sea significativo en el lenguaje. Cada token se define utilizando expresiones regulares o patrones que describen cómo se ven y cómo se deben reconocer.
 
 **Palabras reservadas:**
 -	"entero"
@@ -100,7 +100,7 @@ Sirven para agrupar elementos o delimitar el fin de alguna estructura.
 - "\n"
 - “ “
 
-Para los espacios en blanco (tabuladores y espacios) y los saltos de linea. En Tu_P_Lenguaje estos caracteres no tienen significado especial para el lenguaje y deberá ignorarlos. 
+Para los espacios en blanco (tabuladores y espacios) y los saltos de línea. En Tu_P_Lenguaje estos caracteres no tienen significado especial para el lenguaje y deberá ignorarlos. 
 
 **Variable**
 - ".|."[a-ZA-Z0-9]
@@ -196,4 +196,4 @@ Lo que se encuentra entre llaves es simplemente un comentario en C, entonces al 
 ## Referencias
 [1] García Fernández, Luis Amable, and María Gloria Martínez Vidal. "Primera práctica: Introducción al Analizador Léxico FLEX." [EN LINEA] Disponible en https://repositori.uji.es/xmlui/bitstream/handle/10234/5998/Primera_Practica_IS17_Curso_06_07.pdf?sequence=1 [Accedido: 1 Octubre 2023]
 
->>>>>>> Stashed changes
+
