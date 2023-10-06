@@ -34,7 +34,7 @@ En este trabajo se expondrá un analizador léxico (scanner) que procesa un leng
 
 
 
-### Hipotesis
+### Hipótesis
 La implementación de un analizador léxico para el lenguaje específico propuesto permitirá analizar y dividir de manera efectiva y precisa el código fuente escrito en este lenguaje en una secuencia de tokens, que incluirán palabras reservadas, operadores aritméticos y relacionales, asignaciones, delimitadores, espacios, variables, cadenas, números y funciones, según las reglas de la gramática definida para este lenguaje.
 ### Objetivos y Expectativas del Analizador Léxico:
 1. **Reconocimiento de Palabras Reservadas:** El analizador léxico deberá identificar y clasificar correctamente las palabras reservadas, como "entero," "buleano," "flotante," "SI," "EntonCes," "Para," y "MiEntras." Estas palabras reservadas serán tokens fundamentales para definir la estructura y el flujo del programa.
@@ -149,7 +149,7 @@ En la sección de reglas es donde se escriben los patrones que va a reconocer as
 Finalmente, en la sección de código de usuario se puede escribir cualquier código en C que necesite el usuario para su analizador.
 
 
-los tipo de Tokens usados seran
+los tipo de Tokens usados serán
 
 ```l
 RESERVADAS "entero"|"buleano"|"flotante"|"SI"|"EntoCes"|"Para"|"MiEntras"
@@ -173,7 +173,7 @@ tomando un Fragmento de nuestro archivo flex
 Dentro de las acciones de las reglas de Flex, se debe especificar cómo se manejarán los tokens reconocidos. Esto puede incluir la devolución del token al programa principal para su procesamiento o almacenamiento en una tabla de símbolos.
 En este caso las palabara RESERVADAS, OP_ARITMETCA y OP_RELACIONAL son los tokens que va a reconocer el lenguaje. La accion que va a realiza en esta primera etapa sera imprimir en pantalla el nombre del token junto con su valor.
 
-En esta etapa, también puedes realizar acciones adicionales, como la conversión de números de cadena a valores numéricos, una excepcion que utilizaremos en nuestro lenguaje sera el ignorar los espacion en blanco en la escritura del codigo.
+En esta etapa, también puedes realizar acciones adicionales, como la conversión de números de cadena a valores numéricos, una excepción que utilizaremos en nuestro lenguaje sera el ignorar los espacion en blanco en la escritura del codigo.
 
 ```l
 {ESPACIOBLANCO} {/* Ignorar */}
