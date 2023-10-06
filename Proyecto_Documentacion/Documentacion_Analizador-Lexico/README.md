@@ -188,10 +188,14 @@ En esta etapa, también puedes realizar acciones adicionales, como la conversió
 {ESPACIOBLANCO} {/* Ignorar */}
 ```
 Lo que se encuentra entre llaves es simplemente un comentario en C, entonces al leer un conjunto de espacios o tabuladores el analizador léxico lo va a consumir y no va a realizar ninguna accion (los va a "ignorar")
+
 ## Conclusiones
 
+El desarrollo de un analizador léxico utilizando la herramienta Flex es un paso fundamental en la construcción de un compilador, intérprete o procesador de lenguajes de programación. El analizador léxico se encarga de escanear y dividir el código fuente en una secuencia de tokens, lo que sienta las bases para una interpretación o compilación precisa.
 
+Algunos de los aspectos clave a tener en cuenta en el desarrollo de un analizador léxico con Flex incluyen la definición de reglas para reconocer patrones léxicos, la asignación de valores y la devolución de tokens, así como la gestión de errores. Además, es importante que el analizador sea eficiente y capaz de manejar de manera adecuada el flujo de entrada.
 
+En conclucion un analizador léxico bien desarrollado y probado es crucial para el éxito de proyectos de compilación o interpretación, ya que garantiza que el código fuente se interprete o compile de manera correcta y eficiente. Además, una documentación adecuada del analizador léxico facilita su uso y mantenimiento en proyectos futuros
 
 ## Referencias
 [1] García Fernández, Luis Amable, and María Gloria Martínez Vidal. "Primera práctica: Introducción al Analizador Léxico FLEX." [EN LINEA] Disponible en https://repositori.uji.es/xmlui/bitstream/handle/10234/5998/Primera_Practica_IS17_Curso_06_07.pdf?sequence=1 [Accedido: 1 Octubre 2023]
