@@ -21,7 +21,7 @@ A continuación se muestran ejemplos de ejecución del analizador.
 <br>
 <br>
 <p align="center">
-  <img src="B1.jpg" alt="Bob" width="500"/>
+  <img src="B1.jpeg" alt="Bob" width="500"/>
 </p>
 <br>
 <br>
@@ -29,7 +29,7 @@ A continuación se muestran ejemplos de ejecución del analizador.
 <br>
 <br>
 <p align="center">
-  <img src="B2.jpg" alt="Bob" width="500"/>
+  <img src="B2.jpeg" alt="Bob" width="500"/>
 </p>
 <br>
 <br>
@@ -37,7 +37,7 @@ A continuación se muestran ejemplos de ejecución del analizador.
 <br>
 <br>
 <p align="center">
-  <img src="B3.jpg" alt="Bob" width="500"/>
+  <img src="B3.jpeg" alt="Bob" width="500"/>
 </p>
 <br>
 <br>
@@ -45,7 +45,7 @@ A continuación se muestran ejemplos de ejecución del analizador.
 <br>
 <br>
 <p align="center">
-  <img src="E1.jpg" alt="Bob" width="500"/>
+  <img src="E1.jpeg" alt="Bob" width="500"/>
 </p>
 <br>
 <br>
@@ -54,7 +54,7 @@ A continuación se muestran ejemplos de ejecución del analizador.
 <br>
 <br>
 <p align="center">
-  <img src="E2.jpg" alt="Bob" width="500"/>
+  <img src="E2.jpeg" alt="Bob" width="500"/>
 </p>
 <br>
 <br>
