@@ -82,7 +82,7 @@ Tu_P_Lenguaje permitirá realizar las operaciones aritméticas básicas. Estos s
 - "(=3" (menor o igual que)
 - "E=)" (mayor o igual que)
 - "W!" (diferente de )
-- 
+  
 Este token define las distintas comparaciones que se pueden hacer entre los operandos.
 
 **Asignación**
