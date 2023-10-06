@@ -190,5 +190,6 @@ En conclusión un analizador léxico bien desarrollado y probado es crucial para
 
 ## Referencias
 [1] García Fernández, Luis Amable, and María Gloria Martínez Vidal. "Primera práctica: Introducción al Analizador Léxico FLEX." [EN LINEA] Disponible en https://repositori.uji.es/xmlui/bitstream/handle/10234/5998/Primera_Practica_IS17_Curso_06_07.pdf?sequence=1 [Accedido: 1 Octubre 2023]
+
 [2] Paxson Vern. "Flex, version 2.5". USA: THe Regents of the Univerity of California, 1990.
 
