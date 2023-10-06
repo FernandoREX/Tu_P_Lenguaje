@@ -2,7 +2,7 @@
 <br>
 <br>
 <p align="center">
-  <img src="CaratulaAL.jpg" alt="Bob" width="3000"/>
+  <img src="img/CaratulaAL.jpg" alt="Bob" width="3000"/>
 </p>
 <br>
 <br>
@@ -24,7 +24,7 @@ Un scanner se puede desarrollar con distintos métodos:
 <br>
 <br>
 <p align="center">
-  <img src="ALFuncionamiento.jpg" alt="Bob" width="500"/>
+  <img src="img/ALFuncionamiento.jpg" alt="Bob" width="500"/>
 </p>
 <br>
 <br>
