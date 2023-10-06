@@ -17,6 +17,8 @@ y lo siguiente para ejecutar
 
 A continuación se muestran ejemplos de ejecución del analizador.
 
+
+###Entradas válidas
 <div align="center">
 <br>
 <br>
@@ -42,6 +44,8 @@ A continuación se muestran ejemplos de ejecución del analizador.
 <br>
 <br>
 
+
+###Entradas no válidas
 <br>
 <br>
 <p align="center">
@@ -59,6 +63,3 @@ A continuación se muestran ejemplos de ejecución del analizador.
 <br>
 <br>
 </div>
-
-
-Xd
