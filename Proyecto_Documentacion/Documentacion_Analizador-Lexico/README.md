@@ -145,8 +145,8 @@ En la sección de reglas es donde se escriben los patrones que va a reconocer as
   patrón { acción }
 ```
 
--El "patrón" es una expresión regular que describe cómo se ve un token específico.
--La "acción" es un código C que se ejecutará cuando se encuentre un token que coincida con el patrón.
+- El "patrón" es una expresión regular que describe cómo se ve un token específico.
+- La "acción" es un código C que se ejecutará cuando se encuentre un token que coincida con el patrón.
 
 Finalmente, en la sección de código de usuario se puede escribir cualquier código en C que necesite el usuario para su analizador.
 
@@ -160,6 +160,7 @@ los tipo de Tokens usados seran
 %x TERMINALL
 %x VARIABLE
 ```
+cambiar por 
 ```l
 RESERVADAS "entero"|"buleano"|"flotante"|"SI"|"EntoCes"|"Para"|"MiEntras"
 OP_ARITMETICO "+"|"-"|"*"|"/"
