@@ -49,7 +49,7 @@ A continuación, se muestran ejemplos de ejecución del analizador.
 <br>
 <br>
 <p align="center">
-  <img src="E1.jpeg" alt="E1" width="500"/>
+  <img src="E1.jpeg" alt="E1" width="700"/>
 </p>
 <br>
 <br>
@@ -58,7 +58,7 @@ A continuación, se muestran ejemplos de ejecución del analizador.
 <br>
 <br>
 <p align="center">
-  <img src="E2.jpeg" alt="E2" width="500"/>
+  <img src="E2.jpeg" alt="E2" width="700"/>
 </p>
 <br>
 <br>
