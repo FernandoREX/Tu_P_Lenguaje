@@ -8,32 +8,29 @@
 %x TERMINALL
 %x VARIABLE
 
+RESERVADAS "entero"|"buleano"|"flotante"|"SI"|"EntoCes"|"Para"|"MiEntras"
+OP_ARITMETICO "+"|"-"|"*"|"/"
+OP_RELACIONAL  "<"|">"|"(=3"|"E=)"|"!W"
+ASIGNACION "<="
+DELIMITADOR "UwU"|"("|")"|";"
+ESPACIOBLANCO " "|"\t"
+NUMERO [0-9]
+
+
 %%
 
-"entero"    { printf("Palabra reservada: entero\n"); }
-"buleano"   { printf("Palabra reservada: buleano\n"); }
-"flotante"  { printf("Palabra reservada: flotante\n"); }
-"SI"        { printf("Palabra reservada: SI\n"); }
-"EntoCes"   { printf("Palabra reservada: EntoCes\n"); }
-"Para"      { printf("Palabra reservada: Para\n"); }
-"MiEntras"  { printf("Palabra reservada: MiEntras\n"); }
-"+"         { printf("Operador Aritmético: +\n"); }
-"*"         { printf("Operador Aritmético: *\n"); }
-"-"         { printf("Operador Aritmético: -\n"); }
-"/"         { printf("Operador Aritmético: /\n"); }
-"<"        { printf("Operador Relacional Menor que: <.\n"); }
-">"        { printf("Operador Relacional Mayor que: >.\n"); }
-"(=3"       { printf("Operador Relacional Menor igual que: (=3\n"); }
-"E=)"        { printf("Operador Relacional Mayor igual que: E=)\n"); }
-"!W"         { printf("Operador Relacional diferente que: !W\n"); }
-"<="        { printf("Asignación: <=\n"); }
-"UwU"       { printf("Delimitador: UwU\n"); }
-"("         { printf("Delimitador: (\n"); }
-")"         { printf("Delimitador: )\n"); }
-";"         { printf("Delimitador: ;\n"); }
+{RESERVADAS} { printf("Palabra reservada: %s\n",yytext); }
+
+{OP_ARITMETICO}         { printf("Operador Aritmético: %s\n",yytext); }
+
+{OP_RELACIONAL}       { printf("Operador Relacional: %s \n",yytext); }
+
+{ASIGNACION}        { printf("Asignación: %s \n",yytext); }
+
+{DELIMITADOR}       { printf("Delimitador: %s\n",yytext); }
+
 "\n"        { printf("Salto de línea: \\n\n"); }
-"\t"        { printf("Enter: \\t\n"); }
-" "         { /* Ignorar espacios en blanco */ }
+{ESPACIOBLANCO} {/* Ignorar */}
 
 ".|."         { printf("Variable: "); BEGIN VARIABLE; }
 <VARIABLE>[A-Za-z0-9]+   { printf("%s\n", yytext); BEGIN 0; }
@@ -42,13 +39,13 @@
 <CADENA>[A-Za-z0-9]+   { printf("%s", yytext); BEGIN TERMINAL; }
 <TERMINAL>"UwU"         { printf("\n"); BEGIN 0; }
 
-[0-9]+     { printf("Número: %s\n", yytext); }
+{NUMERO}+     { printf("Número: %s\n", yytext); }
 
 ":-*"         { printf("Función: "); BEGIN FUNCION; }
 <FUNCION>[A-Za-z0-9]+   { printf("%s", yytext); BEGIN TERMINALL; }
 <TERMINALL>"UwU"         { printf("\n"); BEGIN 0; }
 
-.           { printf("Identificador: %s\n", yytext); }
+.           { printf("TOKEN INVALIDO"); }
 
 %%
 
