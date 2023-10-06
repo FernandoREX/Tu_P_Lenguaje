@@ -66,11 +66,15 @@ Primero se definio los tokens o elementos léxicos del lenguaje. Esto incluye pa
 -	"Para"
 -	"MiEntras"
 
+Estas son palabras propias del lenguaje que serán utilizadas para reconocer sentencias y ciertas estructuras del lenguaje y no con otros fines, por ejemplo como identificadores.
+
 **Operadores aritméticos:**
 - "+"
 - "*"
 - "-"
 - "/"
+
+Tu_P_Lenguaje permitirá realizar las operaciones aritméticas básicas. Estos son los tokens que se utilizarán para poder formar dichas expresiones.
 
 **Operadores relacionales:**
 - "<" (menor que)
@@ -78,35 +82,75 @@ Primero se definio los tokens o elementos léxicos del lenguaje. Esto incluye pa
 - "(=3" (menor o igual que)
 - "E=)" (mayor o igual que)
 - "W!" (diferente de )
+- 
+Este token define las distintas comparaciones que se pueden hacer entre los operandos.
 
 **Asignación**
 - "<=" (igual a)
+
+Este token es un operador que se utilizará para asignar valores a las variables.
 
 **Delimitadores:**
 - "UwU"
 - "("
 - ")"
 
+Sirven para agrupar elementos o delimitar el fin de alguna estructura.
+
 **Espacios**
 - "\t"
 - "\n"
 - “ “
 
+Para los espacios en blanco (tabuladores y espacios) y los saltos de linea. En Tu_P_Lenguaje estos caracteres no tienen significado ningún significado especial para el lenguaje. 
+
 **Variable**
-- ".|."
+- ".|."[a-ZA-Z0-9]
+
+Sirve para identificar las cadenas válidas que pueden ser utilizadas como identificadores de variables.
 
 **Cadena**
-- "CaD"
+- "CaD"[A-Za-z0-0-9]"UwU"
+
+Se planea que el lenguaje tenga soporte de cadenas. Este patrón sirve para identificar las cadenas válidas.
 
 **Número**
 - "[0-9]+"
 
+Este para reconocer número, especificamente, numeros enteros. Esta versión del lenguaje no tendrá soporte para números con valores decimales.
+
 **Función**
 - ":-*"
+
+Token para reconocer funciones válidas del lenguaje. Sería como el equivalente a la palabra "def" que se utiliza en Python.
 
 ### Uso deHerramientas
 
 FLEX es un analizador léxico bajo licencia GPL. Cada vez que se encuentre uno de los patrones especificados en FLEX se puede ejecutar un conjunto de acciones asociadas. FLEX es el analizador de dominio público compatible con el analizador léxico más frecuentemente utilizado: LEX (bajo sistema UNIX). FLEX (y LEX) genera, dada una especificación correcta de patrones y acciones, un programa en lenguaje C que puede ser compilado para obtener un programa ejecutable. [1](https://www.ejemplo.com/)
+
+El formato de un archivo de entrada para flex tiene la siguiente estructura
+
+```l
+Definiciones
+%%
+Reglas
+%%
+Código del usuario
+```
+En la seccion de definiciones se colocan, entre otras cosas, declaraciones de nombres sencillos que tienen la finalidad de simplificar la especificación del analizador léxico.
+
+En la sección de reglas es donde se escriben los patrones que va a reconocer asi como las acciones que se van a realizar una vez que el analizador encuentre alguna cadena que coincida con dichos patrones. Las reglas que se definan aquí deben de tener la estructura
+
+```l
+  patrón { acción }
+```
+
+-El "patrón" es una expresión regular que describe cómo se ve un token específico.
+-La "acción" es un código C que se ejecutará cuando se encuentre un token que coincida con el patrón.
+
+Finalmente, en la sección de código de usuario se puede escribir cualquier código en C que necesite el usuario para su analizador.
+
+----------------------------------- VERIFICAR --------------------------------------------
 
 los tipo de Tokens usados seran
 ```l
@@ -117,13 +161,10 @@ los tipo de Tokens usados seran
 %x VARIABLE
 ```
 
+--------------------------------------------------------------------------------------
+
 **Definimos las Reglas**
-En el archivo ".l", se escribieron las reglas que coinciden con los patrones de tus tokens definidos con anterioridad. Cada regla tiene la siguiente estructura:
-```l
-  patrón { acción }
-```
--El "patrón" es una expresión regular que describe cómo se ve un token específico.
--La "acción" es un código C que se ejecutará cuando se encuentre un token que coincida con el patrón.
+En el archivo ".l", se escribieron las reglas que coinciden con los patrones de tus tokens definidos con anterioridad.
 
 tomando un Fragmento de nuestro archivo flex 
 ```l
@@ -135,7 +176,7 @@ Dentro de las acciones de las reglas de Flex, se debe especificar cómo se manej
 ```l
   " "         { /* Ignorar espacios en blanco */ }
 ```
-## Pruebas
+## Conclusiones
 
 
 
