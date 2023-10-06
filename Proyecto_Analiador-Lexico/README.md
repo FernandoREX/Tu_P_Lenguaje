@@ -19,7 +19,7 @@ A continuación, se muestran ejemplos de ejecución del analizador.
 
 
 ### Entradas válidas
-<div align="center">
+<div>
 <br>
 <br>
 <p align="center">
