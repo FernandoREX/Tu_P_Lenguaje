@@ -12,7 +12,7 @@ gcc -o Analizador_lexico lex.yy.c -lfl
 y lo siguiente para ejecutar
 
 ```
-./Analizador_lexico.exe
+Analizador_lexico.exe
 ```
 
 A continuación, se muestran ejemplos de ejecución del analizador.
