@@ -6,7 +6,7 @@ Es necesario ingresar la siguiente línea de código para compilar el analizador
 
 
 ```
-gcc -o Analizador_lexico lex.yy.c -1fl
+gcc -o Analizador_lexico lex.yy.c -lfl
 ```
 
 y lo siguiente para ejecutar
