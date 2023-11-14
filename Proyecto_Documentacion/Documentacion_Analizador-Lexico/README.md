@@ -30,7 +30,7 @@ Un scanner se puede desarrollar con distintos métodos:
 <br>
 </div>
 
-En este trabajo se expondrá un analizador léxico (scanner) que procesa un lenguaje llamado “Tu_P_L”, un lenguaje en español. Para este proyecto se hará uso de la herramienta “FLEX”, ya que hacer un autómata finito es una tarea increíblemente laboriosa y FLEX proporciona las herramientas necesarias para construir de forma sencilla el analizador léxico. 
+En este trabajo se expondrá un analizador léxico (scanner) que procesa un lenguaje llamado “Tu_P_L”, un lenguaje en español. Para este proyecto se hará uso de la herramienta “PLY (Python Lex-Yacc)”, ya que hacer un autómata finito es una tarea increíblemente laboriosa y PLY proporciona las herramientas necesarias para construir de forma sencilla el analizador léxico. 
 
 
 
@@ -124,9 +124,11 @@ Token para reconocer funciones válidas del lenguaje. Sería como el equivalente
 
 ### Uso de Herramientas
 
-FLEX es un analizador léxico bajo licencia GPL. Cada vez que se encuentre uno de los patrones especificados en FLEX se puede ejecutar un conjunto de acciones asociadas. FLEX es el analizador de dominio público compatible con el analizador léxico más frecuentemente utilizado: LEX (bajo sistema UNIX). FLEX (y LEX) genera, dada una especificación correcta de patrones y acciones, un programa en lenguaje C que puede ser compilado para obtener un programa ejecutable. [1](https://www.ejemplo.com/)
+PLY es un acrónimo de "Python Lex-Yacc", que es una biblioteca de Python utilizada para el análisis léxico y sintáctico. PLY proporciona una forma de crear analizadores léxicos y sintácticos. Un analizador léxico (también conocido como escáner) toma una entrada (como el código fuente de un programa) y la divide en tokens, mientras que un analizador sintáctico (o parser) toma estos tokens y los utiliza para construir una estructura de datos, como un árbol de sintaxis abstracta.
 
-El formato de un archivo de entrada para flex tiene la siguiente estructura
+El módulo lex.py que se usará en este proyecto se utiliza para dividir el texto de entrada en una colección de tokens especificados por un conjunto de reglas de expresiones regulares.
+
+El formato de un archivo de entrada para PLY tiene la siguiente estructura
 
 ```l
 Definiciones
@@ -137,54 +139,63 @@ Código del usuario
 ```
 En la seccion de definiciones se colocan, entre otras cosas, declaraciones de nombres sencillos que tienen la finalidad de simplificar la especificación del analizador léxico.[2]
 
-En la sección de reglas es donde se escriben los patrones que va a reconocer asi como las acciones que se van a realizar una vez que el analizador encuentre alguna cadena que coincida con dichos patrones. Las reglas que se definan aquí deben de tener la estructura
+En la sección de reglas es donde se escriben los patrones (expresiones regulares) que va a reconocer asi como las acciones que se van a realizar una vez que el analizador encuentre alguna cadena que coincida con dichos patrones. 
 
+
+Las expresiones regulares de nuestros tokens simples son las siguientes:
 ```l
-  patrón { acción }
+t_SUMA = r'\+'
+t_MULTIPLICACION = r'\*'
+t_MENOS = r'\-'
+t_ENTRE = r'/'
+t_MENOR_QUE = r'<'
+t_MAYOR_QUE = r'>'
+t_MENOR_O_IGUAL_QUE = r'<=3'
+t_MAYOR_O_IGUAL_QUE = r'=>\*'
+t_DIFERENTE_DE = r'{\|}'
+t_IGUAL_A = r'.\|.[a-zA-Z0-9]+[ \t]*<=[ \t]*[0-9]+[ \t]*UwU'
+t_DELIMITADOR = r'UwU'
+t_PARENTESIS_IZQ = r'\('
+t_PARENTESIS_DER = r'\)'
+t_ESPACIO = r'[\t\n ]'
+# Expresión regular para comentarios entre comillas
+t_COMENTARIO = r'"[^"]*"'
 ```
 
-- El "patrón" es una expresión regular que describe cómo se ve un token específico.
-- La "acción" es un código C que se ejecutará cuando se encuentre un token que coincida con el patrón.
+La ER para declaración de variable:
+```
+t_DECLARACION_VARIABLE = r'(ENTERO|BULEANO|FLOTANTE)[ \t]+[a-zA-Z0-9]+[ \t]+UwU'
+```
 
-Finalmente, en la sección de código de usuario se puede escribir cualquier código en C que necesite el usuario para su analizador.
+Expresión regular para comentarios entre comillas:
+```
+t_COMENTARIO = r'"[^"]*"'
+```
 
-
-los tipo de Tokens usados serán
-
-```l
-RESERVADAS "entero"|"buleano"|"flotante"|"SI"|"EntoCes"|"Para"|"MiEntras"
-OP_ARITMETICO "+"|"-"|"*"|"/"
-OP_RELACIONAL  "<"|">"|"(=3"|"E=)"|"!W"
-ASIGNACION "<="
-DELIMITADOR "UwU"|"("|")"|";"
-ESPACIOBLANCO " "|"\t"
-NUMERO [0-9]
+Para ignorar caracteres en blanco:
+```
+t_ignore = ' \t'
 ```
 
 **Definimos las Reglas**
-En el archivo ".l", se escribieron las reglas que coinciden con los patrones de tus tokens definidos con anterioridad.
 
-tomando un Fragmento de nuestro archivo flex 
 ```l
 {RESERVADAS} { printf("Palabra reservada: %s\n",yytext); }
 {OP_ARITMETICO}         { printf("Operador Aritmético: %s\n",yytext); }
 {OP_RELACIONAL}       { printf("Operador Relacional: %s \n",yytext); }
 ```
-Dentro de las acciones de las reglas de Flex, se debe especificar cómo se manejarán los tokens reconocidos. Esto puede incluir la devolución del token al programa principal para su procesamiento o almacenamiento en una tabla de símbolos.
-En este caso las palabara RESERVADAS, OP_ARITMETCA y OP_RELACIONAL son los tokens que va a reconocer el lenguaje. La accion que va a realiza en esta primera etapa sera imprimir en pantalla el nombre del token junto con su valor.
 
-En esta etapa, también puedes realizar acciones adicionales, como la conversión de números de cadena a valores numéricos, una excepción que utilizaremos en nuestro lenguaje sera el ignorar los espacion en blanco en la escritura del codigo.
 
 ```l
 {ESPACIOBLANCO} {/* Ignorar */}
 ```
-Lo que se encuentra entre llaves es simplemente un comentario en C, entonces al leer un conjunto de espacios o tabuladores el analizador léxico lo va a consumir y no va a realizar ninguna accion (los va a "ignorar").
+
 
 ## Conclusiones
 
-El desarrollo de un analizador léxico utilizando la herramienta Flex es un paso fundamental en la construcción de un compilador, intérprete o procesador de lenguajes de programación. El analizador léxico se encarga de escanear y dividir el código fuente en una secuencia de tokens, lo que sienta las bases para una interpretación o compilación precisa.
+El desarrollo de un analizador léxico utilizando la herramienta PLY es un paso fundamental en la construcción de un compilador, intérprete o procesador de lenguajes de programación. El analizador léxico se encarga de escanear y dividir el código fuente en una secuencia de tokens, lo que sienta las bases para una interpretación o compilación precisa.
 
-Algunos de los aspectos clave a tener en cuenta en el desarrollo de un analizador léxico con Flex incluyen la definición de reglas para reconocer patrones léxicos, la asignación de valores y la devolución de tokens, así como la gestión de errores. Además, es importante que el analizador sea eficiente y capaz de manejar de manera adecuada el flujo de entrada.
+Algunos de los aspectos clave a tener en cuenta en el desarrollo de un analizador léxico con PLY incluyen la definición de reglas para reconocer patrones léxicos, la asignación de valores, la devolución de tokens, y la construcción de una gramática, así como la gestión de errores. Además, es importante que el analizador sea eficiente y capaz de manejar de manera adecuada el flujo de entrada.
 
 En conclusión un analizador léxico bien desarrollado y probado es crucial para el éxito de proyectos de compilación o interpretación, ya que garantiza que el código fuente se interprete o compile de manera correcta y eficiente. Además, una documentación adecuada del analizador léxico facilita su uso y mantenimiento en proyectos futuros.
 
