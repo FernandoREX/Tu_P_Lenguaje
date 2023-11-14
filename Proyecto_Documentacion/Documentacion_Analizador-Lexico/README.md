@@ -166,6 +166,10 @@ La ER para declaración de variable:
 ```
 t_DECLARACION_VARIABLE = r'(ENTERO|BULEANO|FLOTANTE)[ \t]+[a-zA-Z0-9]+[ \t]+UwU'
 ```
+ER de Funciones:
+```
+t_FUNCION = r':~\*[ \t]*[a-zA-Z0-9]+\([^)]*\)([\s\S]*)UwU'
+```
 
 Expresión regular para comentarios entre comillas:
 ```
@@ -179,16 +183,27 @@ t_ignore = ' \t'
 
 **Definimos las Reglas**
 
-```l
-{RESERVADAS} { printf("Palabra reservada: %s\n",yytext); }
-{OP_ARITMETICO}         { printf("Operador Aritmético: %s\n",yytext); }
-{OP_RELACIONAL}       { printf("Operador Relacional: %s \n",yytext); }
+Regla para manejar los comentarios (ignorándolos):
+```
+def t_COMENTARIO_newline(t):
+    r'\n+'
+    t.lexer.lineno += len(t.value)
 ```
 
-
-```l
-{ESPACIOBLANCO} {/* Ignorar */}
+Salto de linea:
 ```
+def t_SaltoLinea(t):
+    r'\n+'
+    t.lexer.lineno += len(t.value)
+```
+
+Manejo de errores:
+```
+def t_error(t):
+    print("Carácter ilegal: ", t.value[0])
+    t.lexer.skip(1)
+```
+
 
 
 ## Conclusiones
