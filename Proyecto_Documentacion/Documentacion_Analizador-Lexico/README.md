@@ -215,7 +215,7 @@ Algunos de los aspectos clave a tener en cuenta en el desarrollo de un analizado
 En conclusión un analizador léxico bien desarrollado y probado es crucial para el éxito de proyectos de compilación o interpretación, ya que garantiza que el código fuente se interprete o compile de manera correcta y eficiente. Además, una documentación adecuada del analizador léxico facilita su uso y mantenimiento en proyectos futuros.
 
 ## Referencias
-[1] García Fernández, Luis Amable, and María Gloria Martínez Vidal. "Primera práctica: Introducción al Analizador Léxico FLEX." [EN LINEA] Disponible en https://repositori.uji.es/xmlui/bitstream/handle/10234/5998/Primera_Practica_IS17_Curso_06_07.pdf?sequence=1 [Accedido: 1 Octubre 2023]
+[1] D. Beazley, “PLY (Python Lex-Yacc),” Ply (python lex-yacc), https://www.dabeaz.com/ply/ (accessed Oct. 13, 2023). 
 
 
 [2] Paxson Vern. "Flex, version 2.5". USA: THe Regents of the Univerity of California, 1990.
