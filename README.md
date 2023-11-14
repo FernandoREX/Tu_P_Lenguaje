@@ -18,8 +18,8 @@ Al final del curso se podrá compilar y ejecutar código fuente escrito en este 
 
 El formato de las carpetas de este repositorio es el siguiente.
 
-"Proyecto_Nombre-Proyecto": Aquí se subirán los códigos del proyecto
+"Proyecto_Código": Aquí se subirán los códigos del proyecto
 <div>
 <br>
 </div>
-"Documentación_Nombre-Proyecto": Aquí se subirá la documentación del proyecto
+"Proyecto_Documentación": Aquí se subirá la documentación del proyecto
