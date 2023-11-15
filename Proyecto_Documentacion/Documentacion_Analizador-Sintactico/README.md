@@ -144,4 +144,4 @@ def p_error(p):
 * **print(f"Error de sintaxis en el token: {p}")**: Cuando se llama a esta función, imprime un mensaje de error indicando que se encontró un error de sintaxis y muestra información sobre el token *(p)* que causó el error. Esta información puede incluir detalles como el tipo de token y su valor
 
 ## 10. Referencias
-[1] (https://www.dabeaz.com/ply/ply.html)D. Beazley, "PLY (Python Lex-Yacc)," [En línea]. Disponible en: https://www.dabeaz.com/ply/ply.html
+[1.](https://www.dabeaz.com/ply/ply.html)D. Beazley, "PLY (Python Lex-Yacc)," [En línea]. Disponible en: https://www.dabeaz.com/ply/ply.html
