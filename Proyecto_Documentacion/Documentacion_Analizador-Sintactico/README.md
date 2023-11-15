@@ -1,5 +1,13 @@
+<div align="center">
+<br>
+<br>
+<p align="center">
+  <img src="img/CaratulaAS.jpg" alt="Bob" width="3000"/>
+</p>
+<br>
+<br>
+</div>
 # Analizador-Sintactico
-
 ## 1. Introducción
 
 Documentación de proyecto, una implementación de un analizador sintáctico en Python utilizando PLY (Python Lex-Yacc). Este proyecto tiene como objetivo principal proporcionar una herramienta educativa para el aprendizaje académico del funcionamiento interno de los analizadores sintácticos y cómo se pueden implementar en el contexto de compiladores.
