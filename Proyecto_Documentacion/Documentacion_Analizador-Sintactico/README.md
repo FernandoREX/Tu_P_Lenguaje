@@ -129,10 +129,7 @@ Yacc es una herramienta de generación de analizadores sintácticos (parsers) qu
 
 * Integración con el Analizador Léxico (Lex): Comúnmente, Yacc se utiliza junto con Lex (o herramientas similares) para construir un analizador léxico que proporciona los tokens al analizador sintáctico.
 
-## 7. Ejemplos avanzados
-Proporciona ejemplos más complejos de uso. Muestra cómo manejar casos especiales o construcciones sintácticas más avanzadas.
-
-## 8. Errores y manejo de excepciones
+## 7. Errores y manejo de excepciones
 El bloque de código que comienza con def p_error(p): se refiere a la gestión de errores en tu analizador sintáctico. Esta función se llama automáticamente por PLY cuando ocurre un error sintáctico durante el análisis del código fuente
 
 ```python
