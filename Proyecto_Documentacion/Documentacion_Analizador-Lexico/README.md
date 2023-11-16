@@ -40,11 +40,10 @@ La implementación de un analizador léxico para el lenguaje específico propues
 1. **Reconocimiento de Palabras Reservadas:** El analizador léxico deberá identificar y clasificar correctamente las palabras reservadas, como "entero," "buleano," "flotante," "SI," "EntonCes," "Para," y "MiEntras." Estas palabras reservadas serán tokens fundamentales para definir la estructura y el flujo del programa.
 2. **Identificación de Operadores Aritméticos y Relacionales:** El analizador léxico deberá detectar los operadores aritméticos ("+", "*", "-", "/") y los operadores relacionales ("<", ">", "=3", "E=)", "W!") cuando aparezcan en el código fuente.
 3. **Manejo de Asignaciones:** El analizador léxico deberá ser capaz de reconocer y clasificar correctamente las asignaciones representadas por "<=".
-4. **Delimitadores y Espacios:** Deberá identificar y gestionar adecuadamente los delimitadores ("UwU," "(", ")") y los espacios en blanco ("\t," "\n," " ") que puedan aparecer en el código
+4. **Delimitadores y Espacios:** Deberá identificar y gestionar adecuadamente los delimitadores (";" "(", ")") y los espacios en blanco ("\t," "\n," " ") que puedan aparecer en el código
 5. **Identificación de Variables:** El analizador léxico deberá reconocer las variables representadas por el patrón ".|." y asignarles un token correspondiente.
 6. **Reconocimiento de Cadenas:** Deberá identificar y clasificar las cadenas de caracteres, marcadas por "CaD," como tokens válidos.
 7. **Detección de Números:** El analizador léxico deberá identificar secuencias de dígitos ([0-9]+) y considerarlas como tokens de números válidos.
-8. **Identificación de Funciones:** Deberá reconocer las funciones definidas por ":-*" y generar tokens correspondientes para representarlas en el análisis posterior.
 
 Se espera que el analizador léxico funcione de manera eficiente incluso para programas largos y complejos, procesando el código fuente de manera rápida y sin consumo excesivo de recursos. El analizador léxico propuesto tiene como objetivo fundamental dividir el código fuente escrito en el lenguaje específico en una secuencia de tokens válidos. Su éxito se medirá por su capacidad para reconocer y clasificar los elementos léxicos del lenguaje según las reglas definidas
 
@@ -89,7 +88,7 @@ Estos tokens definen las distintas comparaciones que se pueden hacer entre los o
 Este token es un operador que se utilizará para asignar valores a las variables.
 
 **Delimitadores:**
-- "UwU"
+- ";"
 - "("
 - ")"
 
@@ -108,7 +107,7 @@ Para los espacios en blanco (tabuladores y espacios) y los saltos de línea. En 
 Sirve para identificar las cadenas válidas que pueden ser utilizadas como identificadores de variables.
 
 **Cadena**
-- "CaD"[A-Za-z0-0-9]"UwU"
+- "CaD"[A-Za-z0-0-9]";"
 
 Se planea que el lenguaje tenga soporte de cadenas. Este patrón sirve para identificar las cadenas válidas.
 
@@ -117,8 +116,6 @@ Se planea que el lenguaje tenga soporte de cadenas. Este patrón sirve para iden
 
 Este para reconocer número, especificamente, numeros enteros. Esta versión del lenguaje no tendrá soporte para números con valores decimales.
 
-**Función**
-- ":-*"
 
 Token para reconocer funciones válidas del lenguaje. Sería como el equivalente a la palabra "def" que se utiliza en Python.
 
@@ -153,8 +150,9 @@ t_MAYOR_QUE = r'>'
 t_MENOR_O_IGUAL_QUE = r'<=3'
 t_MAYOR_O_IGUAL_QUE = r'=>\*'
 t_DIFERENTE_DE = r'{\|}'
-t_IGUAL_A = r'.\|.[a-zA-Z0-9]+[ \t]*<=[ \t]*[0-9]+[ \t]*UwU'
-t_DELIMITADOR = r'UwU'
+t_IGUAL_A = r'='
+t_DELIMITADOR = r';'
+t_ASIGNACION = r'<='
 t_PARENTESIS_IZQ = r'\('
 t_PARENTESIS_DER = r'\)'
 t_ESPACIO = r'[\t\n ]'
@@ -164,11 +162,7 @@ t_COMENTARIO = r'"[^"]*"'
 
 La ER para declaración de variable:
 ```
-t_DECLARACION_VARIABLE = r'(ENTERO|BULEANO|FLOTANTE)[ \t]+[a-zA-Z0-9]+[ \t]+UwU'
-```
-ER de Funciones:
-```
-t_FUNCION = r':~\*[ \t]*[a-zA-Z0-9]+\([^)]*\)([\s\S]*)UwU'
+t_DECLARACION_VARIABLE = r'(ENTERO|BULEANO|FLOTANTE)[ \t]+[a-zA-Z0-9]+[ \t]+;'
 ```
 
 Expresión regular para comentarios entre comillas:
@@ -182,13 +176,6 @@ t_ignore = ' \t'
 ```
 
 **Definimos las Reglas**
-
-Regla para manejar los comentarios (ignorándolos):
-```
-def t_COMENTARIO_newline(t):
-    r'\n+'
-    t.lexer.lineno += len(t.value)
-```
 
 Salto de linea:
 ```
