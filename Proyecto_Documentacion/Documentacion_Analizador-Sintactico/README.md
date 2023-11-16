@@ -37,11 +37,11 @@ Para comenzar a utilizar nuestro analizador sintáctico basado en PLY, sigue est
    pip install ply
 
 ## 3. Uso básico
-### 3.1 Ejemplo
 para usar el parse se tendra que modificar la variable 
 ```python
 data = '''    '''
 ```
+### 3.1 Ejemplo 1
 para este ejemplo usaremos la siguiente sentencia
 ```python
 # Prueba con un programa de ejemplo
@@ -63,7 +63,29 @@ al ejecutar el codigo la consola nos mostrara lo siguiente
 <br>
 <br>
 </div>
-donde, se describe la declaraciones, las asignaciones, una declaracion de un numero flotante y la exprecion arietmetica, por ultimo la line nos dice Aceptado
+donde, se describe la declaraciones, las asignaciones, una declaracion de un numero flotante y la exprecion arietmetica, por ultimo la line nos dice *Aceptado*
+
+### 3.2 Ejemplo 2
+para esta ejecion se usara una declaracion sencilla de una variable
+```python
+# Prueba con un programa de ejemplo
+data='''
+        entero x ;
+        flotante y;
+        .|.y <= 5;
+        '''
+```
+<div align="center">
+<br>
+<br>
+<p align="center">
+  <img src="img/ejemplo2.jpg" alt="Beto" width="3000"/>
+</p>
+<br>
+<br>
+</div>
+donde muesta la declaracion de un numero entero con el id 'x' y una delcaracion de un numero flotante con el id 'y'
+y la asignacion nos muestra que el numero 5 se asigno a la variable 'y' y termina la ejecucion con un *Aceptado*
 
 ## 4. Estructura del código
 ### 4.1 Definición de Precedencia
@@ -197,6 +219,13 @@ Yacc es una herramienta de generación de analizadores sintácticos (parsers) qu
 * Generación del Analizador Sintáctico: Yacc utiliza la gramática y las acciones semánticas para generar un analizador sintáctico en el lenguaje de programación elegido. Este analizador es capaz de analizar secuencias de tokens y construir una estructura de árbol sintáctico que representa la estructura del programa fuente.
 
 * Integración con el Analizador Léxico (Lex): Comúnmente, Yacc se utiliza junto con Lex (o herramientas similares) para construir un analizador léxico que proporciona los tokens al analizador sintáctico.
+
+### 6.2 Tipo de parse
+Yacc utiliza un enfoque de análisis sintáctico bottom-up, también conocido como análisis ascendente. En un análisis sintáctico bottom-up, el análisis comienza con los símbolos terminales del código fuente y se construye hacia arriba para llegar al símbolo inicial de la gramática.
+
+* La técnica específica utilizada por Yacc es LR (Left-to-right, Rightmost derivation), lo que significa que analiza el código fuente de izquierda a derecha y construye una derivación más a la derecha en cada paso. En otras palabras, Yacc utiliza el método LR para construir un análisis sintáctico bottom-up eficiente.
+
+* Este enfoque bottom-up permite manejar gramáticas más generales y complejas que algunos enfoques top-down, como el análisis LL (Left-to-right, Leftmost derivation). Yacc utiliza conjuntos LR(0), LR(1), o LR(k) para manejar la ambigüedad y derivaciones a la derecha en las gramáticas.
 
 ## 7. Errores y manejo de excepciones
 El bloque de código que comienza con def p_error(p): se refiere a la gestión de errores en tu analizador sintáctico. Esta función se llama automáticamente por PLY cuando ocurre un error sintáctico durante el análisis del código fuente
