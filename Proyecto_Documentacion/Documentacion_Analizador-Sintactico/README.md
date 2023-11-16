@@ -45,12 +45,13 @@ data = '''    '''
 para este ejemplo usaremos la siguiente sentencia
 ```python
 # Prueba con un programa de ejemplo
-data = '''entero .|.x ;
-          .|.x < 10
-          flotante .|.y;
-          10 + 10;
-          (50 * 10 + 5);
-      '''
+data='''entero .|.x ;
+        .|.x <= 10;
+        flotante .|.y;
+        .|.y <= .|.x;
+        10 + 10;
+        (50 * 10 + 5);
+        '''
 ```
 al ejecutar el codigo la consola nos mostrara lo siguiente
 <div align="center">
