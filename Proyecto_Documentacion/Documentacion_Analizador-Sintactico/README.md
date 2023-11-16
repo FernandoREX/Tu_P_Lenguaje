@@ -37,7 +37,32 @@ Para comenzar a utilizar nuestro analizador sintáctico basado en PLY, sigue est
    pip install ply
 
 ## 3. Uso básico
-Ejemplos sencillos de cómo usar tu analizador sintáctico. Puedes incluir fragmentos de código y explicaciones paso a paso.
+### 3.1 Ejemplo
+para usar el parse se tendra que modificar la variable 
+```python
+data = '''    '''
+```
+para este ejemplo usaremos la siguiente sentencia
+```python
+# Prueba con un programa de ejemplo
+data = '''entero .|.x ;
+          .|.x < 10
+          flotante .|.y;
+          10 + 10;
+          (50 * 10 + 5);
+      '''
+```
+al ejecutar el codigo la consola nos mostrara lo siguiente
+<div align="center">
+<br>
+<br>
+<p align="center">
+  <img src="img/ejemplo1.jpg" alt="jorge" width="3000"/>
+</p>
+<br>
+<br>
+</div>
+donde, se describe la declaraciones, las asignaciones, una declaracion de un numero flotante y la exprecion arietmetica, por ultimo la line nos dice Aceptado
 
 ## 4. Estructura del código
 ### 4.1 Definición de Precedencia
