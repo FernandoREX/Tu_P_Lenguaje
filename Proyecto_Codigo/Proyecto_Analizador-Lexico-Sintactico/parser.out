@@ -1,0 +1,633 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    CADENA
+    COMENTARIO
+    DIFERENTE_DE
+    ENTONCES
+    FUNCION
+    IGUAL_A
+    MAYOR_O_IGUAL_QUE
+    MAYOR_QUE
+    MENOR_O_IGUAL_QUE
+    MENOR_QUE
+    MIENTRAS
+    PARA
+    RESERVED
+    SALTO_LINEA
+    SI
+
+Grammar
+
+Rule 0     S' -> inicio
+Rule 1     inicio -> principal
+Rule 2     principal -> variable_declaracion principal
+Rule 3     principal -> variable_asignacion principal
+Rule 4     principal -> exp_aritmetica principal
+Rule 5     principal -> variable_declaracion
+Rule 6     principal -> variable_asignacion
+Rule 7     principal -> exp_aritmetica
+Rule 8     variable_declaracion -> ENTERO ID DELIMITADOR
+Rule 9     variable_declaracion -> FLOTANTE ID DELIMITADOR
+Rule 10    variable_declaracion -> BULEANO ID DELIMITADOR
+Rule 11    variable_asignacion -> ID ASIGNACION NUMERO DELIMITADOR
+Rule 12    variable_asignacion -> ID ASIGNACION ID DELIMITADOR
+Rule 13    exp_aritmetica -> expresion DELIMITADOR
+Rule 14    expresion -> expresion SUMA termino
+Rule 15    expresion -> expresion MENOS termino
+Rule 16    expresion -> termino
+Rule 17    termino -> termino MULTIPLICACION factor
+Rule 18    termino -> termino ENTRE factor
+Rule 19    termino -> factor
+Rule 20    factor -> NUMERO
+Rule 21    factor -> PARENTESIS_IZQ expresion PARENTESIS_DER
+
+Terminals, with rules where they appear
+
+ASIGNACION           : 11 12
+BULEANO              : 10
+CADENA               : 
+COMENTARIO           : 
+DELIMITADOR          : 8 9 10 11 12 13
+DIFERENTE_DE         : 
+ENTERO               : 8
+ENTONCES             : 
+ENTRE                : 18
+FLOTANTE             : 9
+FUNCION              : 
+ID                   : 8 9 10 11 12 12
+IGUAL_A              : 
+MAYOR_O_IGUAL_QUE    : 
+MAYOR_QUE            : 
+MENOR_O_IGUAL_QUE    : 
+MENOR_QUE            : 
+MENOS                : 15
+MIENTRAS             : 
+MULTIPLICACION       : 17
+NUMERO               : 11 20
+PARA                 : 
+PARENTESIS_DER       : 21
+PARENTESIS_IZQ       : 21
+RESERVED             : 
+SALTO_LINEA          : 
+SI                   : 
+SUMA                 : 14
+error                : 
+
+Nonterminals, with rules where they appear
+
+exp_aritmetica       : 4 7
+expresion            : 13 14 15 21
+factor               : 17 18 19
+inicio               : 0
+principal            : 1 2 3 4
+termino              : 14 15 16 17 18
+variable_asignacion  : 3 6
+variable_declaracion : 2 5
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . inicio
+    (1) inicio -> . principal
+    (2) principal -> . variable_declaracion principal
+    (3) principal -> . variable_asignacion principal
+    (4) principal -> . exp_aritmetica principal
+    (5) principal -> . variable_declaracion
+    (6) principal -> . variable_asignacion
+    (7) principal -> . exp_aritmetica
+    (8) variable_declaracion -> . ENTERO ID DELIMITADOR
+    (9) variable_declaracion -> . FLOTANTE ID DELIMITADOR
+    (10) variable_declaracion -> . BULEANO ID DELIMITADOR
+    (11) variable_asignacion -> . ID ASIGNACION NUMERO DELIMITADOR
+    (12) variable_asignacion -> . ID ASIGNACION ID DELIMITADOR
+    (13) exp_aritmetica -> . expresion DELIMITADOR
+    (14) expresion -> . expresion SUMA termino
+    (15) expresion -> . expresion MENOS termino
+    (16) expresion -> . termino
+    (17) termino -> . termino MULTIPLICACION factor
+    (18) termino -> . termino ENTRE factor
+    (19) termino -> . factor
+    (20) factor -> . NUMERO
+    (21) factor -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    ENTERO          shift and go to state 6
+    FLOTANTE        shift and go to state 8
+    BULEANO         shift and go to state 9
+    ID              shift and go to state 7
+    NUMERO          shift and go to state 10
+    PARENTESIS_IZQ  shift and go to state 14
+
+    inicio                         shift and go to state 1
+    principal                      shift and go to state 2
+    variable_declaracion           shift and go to state 3
+    variable_asignacion            shift and go to state 4
+    exp_aritmetica                 shift and go to state 5
+    expresion                      shift and go to state 11
+    termino                        shift and go to state 12
+    factor                         shift and go to state 13
+
+state 1
+
+    (0) S' -> inicio .
+
+
+
+state 2
+
+    (1) inicio -> principal .
+
+    $end            reduce using rule 1 (inicio -> principal .)
+
+
+state 3
+
+    (2) principal -> variable_declaracion . principal
+    (5) principal -> variable_declaracion .
+    (2) principal -> . variable_declaracion principal
+    (3) principal -> . variable_asignacion principal
+    (4) principal -> . exp_aritmetica principal
+    (5) principal -> . variable_declaracion
+    (6) principal -> . variable_asignacion
+    (7) principal -> . exp_aritmetica
+    (8) variable_declaracion -> . ENTERO ID DELIMITADOR
+    (9) variable_declaracion -> . FLOTANTE ID DELIMITADOR
+    (10) variable_declaracion -> . BULEANO ID DELIMITADOR
+    (11) variable_asignacion -> . ID ASIGNACION NUMERO DELIMITADOR
+    (12) variable_asignacion -> . ID ASIGNACION ID DELIMITADOR
+    (13) exp_aritmetica -> . expresion DELIMITADOR
+    (14) expresion -> . expresion SUMA termino
+    (15) expresion -> . expresion MENOS termino
+    (16) expresion -> . termino
+    (17) termino -> . termino MULTIPLICACION factor
+    (18) termino -> . termino ENTRE factor
+    (19) termino -> . factor
+    (20) factor -> . NUMERO
+    (21) factor -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    $end            reduce using rule 5 (principal -> variable_declaracion .)
+    ENTERO          shift and go to state 6
+    FLOTANTE        shift and go to state 8
+    BULEANO         shift and go to state 9
+    ID              shift and go to state 7
+    NUMERO          shift and go to state 10
+    PARENTESIS_IZQ  shift and go to state 14
+
+    variable_declaracion           shift and go to state 3
+    principal                      shift and go to state 15
+    variable_asignacion            shift and go to state 4
+    exp_aritmetica                 shift and go to state 5
+    expresion                      shift and go to state 11
+    termino                        shift and go to state 12
+    factor                         shift and go to state 13
+
+state 4
+
+    (3) principal -> variable_asignacion . principal
+    (6) principal -> variable_asignacion .
+    (2) principal -> . variable_declaracion principal
+    (3) principal -> . variable_asignacion principal
+    (4) principal -> . exp_aritmetica principal
+    (5) principal -> . variable_declaracion
+    (6) principal -> . variable_asignacion
+    (7) principal -> . exp_aritmetica
+    (8) variable_declaracion -> . ENTERO ID DELIMITADOR
+    (9) variable_declaracion -> . FLOTANTE ID DELIMITADOR
+    (10) variable_declaracion -> . BULEANO ID DELIMITADOR
+    (11) variable_asignacion -> . ID ASIGNACION NUMERO DELIMITADOR
+    (12) variable_asignacion -> . ID ASIGNACION ID DELIMITADOR
+    (13) exp_aritmetica -> . expresion DELIMITADOR
+    (14) expresion -> . expresion SUMA termino
+    (15) expresion -> . expresion MENOS termino
+    (16) expresion -> . termino
+    (17) termino -> . termino MULTIPLICACION factor
+    (18) termino -> . termino ENTRE factor
+    (19) termino -> . factor
+    (20) factor -> . NUMERO
+    (21) factor -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    $end            reduce using rule 6 (principal -> variable_asignacion .)
+    ENTERO          shift and go to state 6
+    FLOTANTE        shift and go to state 8
+    BULEANO         shift and go to state 9
+    ID              shift and go to state 7
+    NUMERO          shift and go to state 10
+    PARENTESIS_IZQ  shift and go to state 14
+
+    variable_asignacion            shift and go to state 4
+    principal                      shift and go to state 16
+    variable_declaracion           shift and go to state 3
+    exp_aritmetica                 shift and go to state 5
+    expresion                      shift and go to state 11
+    termino                        shift and go to state 12
+    factor                         shift and go to state 13
+
+state 5
+
+    (4) principal -> exp_aritmetica . principal
+    (7) principal -> exp_aritmetica .
+    (2) principal -> . variable_declaracion principal
+    (3) principal -> . variable_asignacion principal
+    (4) principal -> . exp_aritmetica principal
+    (5) principal -> . variable_declaracion
+    (6) principal -> . variable_asignacion
+    (7) principal -> . exp_aritmetica
+    (8) variable_declaracion -> . ENTERO ID DELIMITADOR
+    (9) variable_declaracion -> . FLOTANTE ID DELIMITADOR
+    (10) variable_declaracion -> . BULEANO ID DELIMITADOR
+    (11) variable_asignacion -> . ID ASIGNACION NUMERO DELIMITADOR
+    (12) variable_asignacion -> . ID ASIGNACION ID DELIMITADOR
+    (13) exp_aritmetica -> . expresion DELIMITADOR
+    (14) expresion -> . expresion SUMA termino
+    (15) expresion -> . expresion MENOS termino
+    (16) expresion -> . termino
+    (17) termino -> . termino MULTIPLICACION factor
+    (18) termino -> . termino ENTRE factor
+    (19) termino -> . factor
+    (20) factor -> . NUMERO
+    (21) factor -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    $end            reduce using rule 7 (principal -> exp_aritmetica .)
+    ENTERO          shift and go to state 6
+    FLOTANTE        shift and go to state 8
+    BULEANO         shift and go to state 9
+    ID              shift and go to state 7
+    NUMERO          shift and go to state 10
+    PARENTESIS_IZQ  shift and go to state 14
+
+    exp_aritmetica                 shift and go to state 5
+    principal                      shift and go to state 17
+    variable_declaracion           shift and go to state 3
+    variable_asignacion            shift and go to state 4
+    expresion                      shift and go to state 11
+    termino                        shift and go to state 12
+    factor                         shift and go to state 13
+
+state 6
+
+    (8) variable_declaracion -> ENTERO . ID DELIMITADOR
+
+    ID              shift and go to state 18
+
+
+state 7
+
+    (11) variable_asignacion -> ID . ASIGNACION NUMERO DELIMITADOR
+    (12) variable_asignacion -> ID . ASIGNACION ID DELIMITADOR
+
+    ASIGNACION      shift and go to state 19
+
+
+state 8
+
+    (9) variable_declaracion -> FLOTANTE . ID DELIMITADOR
+
+    ID              shift and go to state 20
+
+
+state 9
+
+    (10) variable_declaracion -> BULEANO . ID DELIMITADOR
+
+    ID              shift and go to state 21
+
+
+state 10
+
+    (20) factor -> NUMERO .
+
+    MULTIPLICACION  reduce using rule 20 (factor -> NUMERO .)
+    ENTRE           reduce using rule 20 (factor -> NUMERO .)
+    DELIMITADOR     reduce using rule 20 (factor -> NUMERO .)
+    SUMA            reduce using rule 20 (factor -> NUMERO .)
+    MENOS           reduce using rule 20 (factor -> NUMERO .)
+    PARENTESIS_DER  reduce using rule 20 (factor -> NUMERO .)
+
+
+state 11
+
+    (13) exp_aritmetica -> expresion . DELIMITADOR
+    (14) expresion -> expresion . SUMA termino
+    (15) expresion -> expresion . MENOS termino
+
+    DELIMITADOR     shift and go to state 22
+    SUMA            shift and go to state 23
+    MENOS           shift and go to state 24
+
+
+state 12
+
+    (16) expresion -> termino .
+    (17) termino -> termino . MULTIPLICACION factor
+    (18) termino -> termino . ENTRE factor
+
+    DELIMITADOR     reduce using rule 16 (expresion -> termino .)
+    SUMA            reduce using rule 16 (expresion -> termino .)
+    MENOS           reduce using rule 16 (expresion -> termino .)
+    PARENTESIS_DER  reduce using rule 16 (expresion -> termino .)
+    MULTIPLICACION  shift and go to state 25
+    ENTRE           shift and go to state 26
+
+
+state 13
+
+    (19) termino -> factor .
+
+    MULTIPLICACION  reduce using rule 19 (termino -> factor .)
+    ENTRE           reduce using rule 19 (termino -> factor .)
+    DELIMITADOR     reduce using rule 19 (termino -> factor .)
+    SUMA            reduce using rule 19 (termino -> factor .)
+    MENOS           reduce using rule 19 (termino -> factor .)
+    PARENTESIS_DER  reduce using rule 19 (termino -> factor .)
+
+
+state 14
+
+    (21) factor -> PARENTESIS_IZQ . expresion PARENTESIS_DER
+    (14) expresion -> . expresion SUMA termino
+    (15) expresion -> . expresion MENOS termino
+    (16) expresion -> . termino
+    (17) termino -> . termino MULTIPLICACION factor
+    (18) termino -> . termino ENTRE factor
+    (19) termino -> . factor
+    (20) factor -> . NUMERO
+    (21) factor -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    NUMERO          shift and go to state 10
+    PARENTESIS_IZQ  shift and go to state 14
+
+    expresion                      shift and go to state 27
+    termino                        shift and go to state 12
+    factor                         shift and go to state 13
+
+state 15
+
+    (2) principal -> variable_declaracion principal .
+
+    $end            reduce using rule 2 (principal -> variable_declaracion principal .)
+
+
+state 16
+
+    (3) principal -> variable_asignacion principal .
+
+    $end            reduce using rule 3 (principal -> variable_asignacion principal .)
+
+
+state 17
+
+    (4) principal -> exp_aritmetica principal .
+
+    $end            reduce using rule 4 (principal -> exp_aritmetica principal .)
+
+
+state 18
+
+    (8) variable_declaracion -> ENTERO ID . DELIMITADOR
+
+    DELIMITADOR     shift and go to state 28
+
+
+state 19
+
+    (11) variable_asignacion -> ID ASIGNACION . NUMERO DELIMITADOR
+    (12) variable_asignacion -> ID ASIGNACION . ID DELIMITADOR
+
+    NUMERO          shift and go to state 30
+    ID              shift and go to state 29
+
+
+state 20
+
+    (9) variable_declaracion -> FLOTANTE ID . DELIMITADOR
+
+    DELIMITADOR     shift and go to state 31
+
+
+state 21
+
+    (10) variable_declaracion -> BULEANO ID . DELIMITADOR
+
+    DELIMITADOR     shift and go to state 32
+
+
+state 22
+
+    (13) exp_aritmetica -> expresion DELIMITADOR .
+
+    ENTERO          reduce using rule 13 (exp_aritmetica -> expresion DELIMITADOR .)
+    FLOTANTE        reduce using rule 13 (exp_aritmetica -> expresion DELIMITADOR .)
+    BULEANO         reduce using rule 13 (exp_aritmetica -> expresion DELIMITADOR .)
+    ID              reduce using rule 13 (exp_aritmetica -> expresion DELIMITADOR .)
+    NUMERO          reduce using rule 13 (exp_aritmetica -> expresion DELIMITADOR .)
+    PARENTESIS_IZQ  reduce using rule 13 (exp_aritmetica -> expresion DELIMITADOR .)
+    $end            reduce using rule 13 (exp_aritmetica -> expresion DELIMITADOR .)
+
+
+state 23
+
+    (14) expresion -> expresion SUMA . termino
+    (17) termino -> . termino MULTIPLICACION factor
+    (18) termino -> . termino ENTRE factor
+    (19) termino -> . factor
+    (20) factor -> . NUMERO
+    (21) factor -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    NUMERO          shift and go to state 10
+    PARENTESIS_IZQ  shift and go to state 14
+
+    termino                        shift and go to state 33
+    factor                         shift and go to state 13
+
+state 24
+
+    (15) expresion -> expresion MENOS . termino
+    (17) termino -> . termino MULTIPLICACION factor
+    (18) termino -> . termino ENTRE factor
+    (19) termino -> . factor
+    (20) factor -> . NUMERO
+    (21) factor -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    NUMERO          shift and go to state 10
+    PARENTESIS_IZQ  shift and go to state 14
+
+    termino                        shift and go to state 34
+    factor                         shift and go to state 13
+
+state 25
+
+    (17) termino -> termino MULTIPLICACION . factor
+    (20) factor -> . NUMERO
+    (21) factor -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    NUMERO          shift and go to state 10
+    PARENTESIS_IZQ  shift and go to state 14
+
+    factor                         shift and go to state 35
+
+state 26
+
+    (18) termino -> termino ENTRE . factor
+    (20) factor -> . NUMERO
+    (21) factor -> . PARENTESIS_IZQ expresion PARENTESIS_DER
+
+    NUMERO          shift and go to state 10
+    PARENTESIS_IZQ  shift and go to state 14
+
+    factor                         shift and go to state 36
+
+state 27
+
+    (21) factor -> PARENTESIS_IZQ expresion . PARENTESIS_DER
+    (14) expresion -> expresion . SUMA termino
+    (15) expresion -> expresion . MENOS termino
+
+    PARENTESIS_DER  shift and go to state 37
+    SUMA            shift and go to state 23
+    MENOS           shift and go to state 24
+
+
+state 28
+
+    (8) variable_declaracion -> ENTERO ID DELIMITADOR .
+
+    ENTERO          reduce using rule 8 (variable_declaracion -> ENTERO ID DELIMITADOR .)
+    FLOTANTE        reduce using rule 8 (variable_declaracion -> ENTERO ID DELIMITADOR .)
+    BULEANO         reduce using rule 8 (variable_declaracion -> ENTERO ID DELIMITADOR .)
+    ID              reduce using rule 8 (variable_declaracion -> ENTERO ID DELIMITADOR .)
+    NUMERO          reduce using rule 8 (variable_declaracion -> ENTERO ID DELIMITADOR .)
+    PARENTESIS_IZQ  reduce using rule 8 (variable_declaracion -> ENTERO ID DELIMITADOR .)
+    $end            reduce using rule 8 (variable_declaracion -> ENTERO ID DELIMITADOR .)
+
+
+state 29
+
+    (12) variable_asignacion -> ID ASIGNACION ID . DELIMITADOR
+
+    DELIMITADOR     shift and go to state 38
+
+
+state 30
+
+    (11) variable_asignacion -> ID ASIGNACION NUMERO . DELIMITADOR
+
+    DELIMITADOR     shift and go to state 39
+
+
+state 31
+
+    (9) variable_declaracion -> FLOTANTE ID DELIMITADOR .
+
+    ENTERO          reduce using rule 9 (variable_declaracion -> FLOTANTE ID DELIMITADOR .)
+    FLOTANTE        reduce using rule 9 (variable_declaracion -> FLOTANTE ID DELIMITADOR .)
+    BULEANO         reduce using rule 9 (variable_declaracion -> FLOTANTE ID DELIMITADOR .)
+    ID              reduce using rule 9 (variable_declaracion -> FLOTANTE ID DELIMITADOR .)
+    NUMERO          reduce using rule 9 (variable_declaracion -> FLOTANTE ID DELIMITADOR .)
+    PARENTESIS_IZQ  reduce using rule 9 (variable_declaracion -> FLOTANTE ID DELIMITADOR .)
+    $end            reduce using rule 9 (variable_declaracion -> FLOTANTE ID DELIMITADOR .)
+
+
+state 32
+
+    (10) variable_declaracion -> BULEANO ID DELIMITADOR .
+
+    ENTERO          reduce using rule 10 (variable_declaracion -> BULEANO ID DELIMITADOR .)
+    FLOTANTE        reduce using rule 10 (variable_declaracion -> BULEANO ID DELIMITADOR .)
+    BULEANO         reduce using rule 10 (variable_declaracion -> BULEANO ID DELIMITADOR .)
+    ID              reduce using rule 10 (variable_declaracion -> BULEANO ID DELIMITADOR .)
+    NUMERO          reduce using rule 10 (variable_declaracion -> BULEANO ID DELIMITADOR .)
+    PARENTESIS_IZQ  reduce using rule 10 (variable_declaracion -> BULEANO ID DELIMITADOR .)
+    $end            reduce using rule 10 (variable_declaracion -> BULEANO ID DELIMITADOR .)
+
+
+state 33
+
+    (14) expresion -> expresion SUMA termino .
+    (17) termino -> termino . MULTIPLICACION factor
+    (18) termino -> termino . ENTRE factor
+
+    DELIMITADOR     reduce using rule 14 (expresion -> expresion SUMA termino .)
+    SUMA            reduce using rule 14 (expresion -> expresion SUMA termino .)
+    MENOS           reduce using rule 14 (expresion -> expresion SUMA termino .)
+    PARENTESIS_DER  reduce using rule 14 (expresion -> expresion SUMA termino .)
+    MULTIPLICACION  shift and go to state 25
+    ENTRE           shift and go to state 26
+
+
+state 34
+
+    (15) expresion -> expresion MENOS termino .
+    (17) termino -> termino . MULTIPLICACION factor
+    (18) termino -> termino . ENTRE factor
+
+    DELIMITADOR     reduce using rule 15 (expresion -> expresion MENOS termino .)
+    SUMA            reduce using rule 15 (expresion -> expresion MENOS termino .)
+    MENOS           reduce using rule 15 (expresion -> expresion MENOS termino .)
+    PARENTESIS_DER  reduce using rule 15 (expresion -> expresion MENOS termino .)
+    MULTIPLICACION  shift and go to state 25
+    ENTRE           shift and go to state 26
+
+
+state 35
+
+    (17) termino -> termino MULTIPLICACION factor .
+
+    MULTIPLICACION  reduce using rule 17 (termino -> termino MULTIPLICACION factor .)
+    ENTRE           reduce using rule 17 (termino -> termino MULTIPLICACION factor .)
+    DELIMITADOR     reduce using rule 17 (termino -> termino MULTIPLICACION factor .)
+    SUMA            reduce using rule 17 (termino -> termino MULTIPLICACION factor .)
+    MENOS           reduce using rule 17 (termino -> termino MULTIPLICACION factor .)
+    PARENTESIS_DER  reduce using rule 17 (termino -> termino MULTIPLICACION factor .)
+
+
+state 36
+
+    (18) termino -> termino ENTRE factor .
+
+    MULTIPLICACION  reduce using rule 18 (termino -> termino ENTRE factor .)
+    ENTRE           reduce using rule 18 (termino -> termino ENTRE factor .)
+    DELIMITADOR     reduce using rule 18 (termino -> termino ENTRE factor .)
+    SUMA            reduce using rule 18 (termino -> termino ENTRE factor .)
+    MENOS           reduce using rule 18 (termino -> termino ENTRE factor .)
+    PARENTESIS_DER  reduce using rule 18 (termino -> termino ENTRE factor .)
+
+
+state 37
+
+    (21) factor -> PARENTESIS_IZQ expresion PARENTESIS_DER .
+
+    MULTIPLICACION  reduce using rule 21 (factor -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    ENTRE           reduce using rule 21 (factor -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    DELIMITADOR     reduce using rule 21 (factor -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    SUMA            reduce using rule 21 (factor -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    MENOS           reduce using rule 21 (factor -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+    PARENTESIS_DER  reduce using rule 21 (factor -> PARENTESIS_IZQ expresion PARENTESIS_DER .)
+
+
+state 38
+
+    (12) variable_asignacion -> ID ASIGNACION ID DELIMITADOR .
+
+    ENTERO          reduce using rule 12 (variable_asignacion -> ID ASIGNACION ID DELIMITADOR .)
+    FLOTANTE        reduce using rule 12 (variable_asignacion -> ID ASIGNACION ID DELIMITADOR .)
+    BULEANO         reduce using rule 12 (variable_asignacion -> ID ASIGNACION ID DELIMITADOR .)
+    ID              reduce using rule 12 (variable_asignacion -> ID ASIGNACION ID DELIMITADOR .)
+    NUMERO          reduce using rule 12 (variable_asignacion -> ID ASIGNACION ID DELIMITADOR .)
+    PARENTESIS_IZQ  reduce using rule 12 (variable_asignacion -> ID ASIGNACION ID DELIMITADOR .)
+    $end            reduce using rule 12 (variable_asignacion -> ID ASIGNACION ID DELIMITADOR .)
+
+
+state 39
+
+    (11) variable_asignacion -> ID ASIGNACION NUMERO DELIMITADOR .
+
+    ENTERO          reduce using rule 11 (variable_asignacion -> ID ASIGNACION NUMERO DELIMITADOR .)
+    FLOTANTE        reduce using rule 11 (variable_asignacion -> ID ASIGNACION NUMERO DELIMITADOR .)
+    BULEANO         reduce using rule 11 (variable_asignacion -> ID ASIGNACION NUMERO DELIMITADOR .)
+    ID              reduce using rule 11 (variable_asignacion -> ID ASIGNACION NUMERO DELIMITADOR .)
+    NUMERO          reduce using rule 11 (variable_asignacion -> ID ASIGNACION NUMERO DELIMITADOR .)
+    PARENTESIS_IZQ  reduce using rule 11 (variable_asignacion -> ID ASIGNACION NUMERO DELIMITADOR .)
+    $end            reduce using rule 11 (variable_asignacion -> ID ASIGNACION NUMERO DELIMITADOR .)
+
