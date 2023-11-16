@@ -2,7 +2,7 @@
 <br>
 <br>
 <p align="center">
-  <img src="img/CaratulaAL.jpg" alt="Bob" width="3000"/>
+  <img src="img/CaratulaAL.jpg" alt="Car" width="3000"/>
 </p>
 <br>
 <br>
@@ -24,7 +24,7 @@ Un scanner se puede desarrollar con distintos métodos:
 <br>
 <br>
 <p align="center">
-  <img src="img/ALFuncionamiento.jpg" alt="Bob" width="500"/>
+  <img src="img/ALFuncionamiento.jpg" alt="Func" width="500"/>
 </p>
 <br>
 <br>
@@ -191,7 +191,52 @@ def t_error(t):
     t.lexer.skip(1)
 ```
 
+Ejecución
 
+Para la ejecución del código se necesita de  PLY, el cual se puede descargar de https://www.dabeaz.com/ply/ply.html
+Se deberá ubicar nuestro código en la carpeta “src”.
+
+<div align="center">
+<br>
+<br>
+<p align="center">
+  <img src="img/Ubi.jpg" alt="FolderUbi" width="3000"/>
+</p>
+<br>
+<br>
+</div>
+
+Una vez ubicado en esta carpeta se puede hacer la ejecución. A continuación se hará una ejecución con la siguiente entrada:
+```
+data = '''
++
+*
+-
+/
+<
+>
+(
+)
+<=3
+=>*
+{|}
+.|.VARIABLE1    <=  4656 ;
+entero ;
+SI .|.x <= 10 ;
+'''
+```
+
+La salida de esta ejecución es la siguiente:
+
+<div align="center">
+<br>
+<br>
+<p align="center">
+  <img src="img/Res.jpg" alt="Resultado" width="3000"/>
+</p>
+<br>
+<br>
+</div>
 
 ## Conclusiones
 
