@@ -13,11 +13,14 @@
 ## 1. Introducción
 
 Documentación de proyecto, una implementación de un analizador sintáctico en Python utilizando PLY (Python Lex-Yacc). Este proyecto tiene como objetivo principal proporcionar una herramienta educativa para el aprendizaje académico del funcionamiento interno de los analizadores sintácticos y cómo se pueden implementar en el contexto de compiladores
+## Hipótesis
+
+La implementación de un analizador semántico para el lenguaje específico propuesto permitirá verificar y validar de manera efectiva y precisa el código fuente escrito en este lenguaje, asegurándose de que todas las construcciones y operaciones cumplen con las reglas de tipo y semánticas definidas para este lenguaje. Esto incluirá la verificación de la correcta utilización de variables y la comprobación de la compatibilidad de tipos en las operaciones y asignaciones.
 
 ## Objetivos del Aprendizaje
 - Proporcionar una implementación educativa de un analizador sintáctico utilizando PLY
 - Facilitar la comprensión de los principios teóricos detrás de los analizadores sintácticos y la generación de código
-- Ofrecer ejemplos prácticos que ilustren funcina un analizador sintáctico en un compilador
+- Ofrecer ejemplos prácticos que ilustren cómo funciona un analizador sintáctico en un compilador
 
 ## Implementación en un Compilador
 La capacidad de integrar un analizador sintáctico en un compilador es una competencia clave para aquellos que buscan desarrollar software que traduzca código fuente a código ejecutable. A lo largo de esta documentación, exploraremos cómo puede integrarse este analizador sintáctico en un contexto más amplio de compilación, proporcionando ejemplos y pautas para facilitar la comprensión práctica
@@ -238,6 +241,16 @@ def p_error(p):
 ```
 * **def p_error(p)**: Esta línea define la función *p_error* que se activa cuando se encuentra un error sintáctico.
 * **print(f"Error de sintaxis en el token: {p}")**: Cuando se llama a esta función, imprime un mensaje de error indicando que se encontró un error de sintaxis y muestra información sobre el token *(p)* que causó el error. Esta información puede incluir detalles como el tipo de token y su valor
+
+## Conclusiones
+
+En la implementación del analizador sintáctico utilizando PLY (Python Lex-Yacc) se ha logrado una estructura que abarca desde la definición de precedencia hasta la especificación de reglas de producción para gestionar declaraciones, asignaciones y expresiones aritméticas. La gramática actual del lenguaje ha evolucionado para reflejar las construcciones sintácticas necesarias para futuras aplicaciones 
+
+Se ha implementado una estrategia de análisis sintáctico bottom-up con Yacc, lo que proporciona flexibilidad para manejar gramáticas complejas y ambigüedades. Las reglas específicas de producción han sido diseñadas para reconocer y procesar declaraciones de variables, asignaciones y expresiones aritméticas.
+
+Además, se ha incorporado un mecanismo de manejo de errores para mejorar la robustez del analizador, proporcionando retroalimentación en caso de encontrar errores sintácticos en el código fuente.
+
+Este proyecto refleja el progreso significativo en la implementación del analizador sintáctico, sienta las bases para la construcción de gramáticas más complejas en el futuro y demuestra una comprensión profunda de los principios y técnicas de análisis sintáctico en el contexto del proyecto.
 
 ## Referencias
 [1.](https://www.dabeaz.com/ply/ply.html)D. Beazley, "PLY (Python Lex-Yacc)," [En línea]. Disponible en: https://www.dabeaz.com/ply/ply.html
