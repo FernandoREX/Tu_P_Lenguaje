@@ -253,4 +253,5 @@ Además, se ha incorporado un mecanismo de manejo de errores para mejorar la rob
 Este proyecto refleja el progreso significativo en la implementación del analizador sintáctico, sienta las bases para la construcción de gramáticas más complejas en el futuro y demuestra una comprensión profunda de los principios y técnicas de análisis sintáctico en el contexto del proyecto.
 
 ## Referencias
-[1.](https://www.dabeaz.com/ply/ply.html)D. Beazley, "PLY (Python Lex-Yacc)," [En línea]. Disponible en: https://www.dabeaz.com/ply/ply.html
+[1] D. Beazley, “PLY (Python Lex-Yacc),” Ply (python lex-yacc), https://www.dabeaz.com/ply/ 
+(accessed Oct. 13, 2023).
