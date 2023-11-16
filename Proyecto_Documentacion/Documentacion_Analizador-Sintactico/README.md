@@ -75,6 +75,7 @@ data='''
         .|.y <= 5;
         '''
 ```
+despues de que se ejecute el parse la consola nos mostrara lo siguiente
 <div align="center">
 <br>
 <br>
