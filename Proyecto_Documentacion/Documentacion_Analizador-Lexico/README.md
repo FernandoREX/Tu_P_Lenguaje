@@ -200,7 +200,7 @@ Se deberá ubicar nuestro código en la carpeta “src”.
 <br>
 <br>
 <p align="center">
-  <img src="img/Ubi.jpg" alt="FolderUbi" width="3000"/>
+  <img src="img/Ubi.jpg" alt="FolderUbi" width="1500"/>
 </p>
 <br>
 <br>
@@ -232,7 +232,7 @@ La salida de esta ejecución es la siguiente:
 <br>
 <br>
 <p align="center">
-  <img src="img/Res.jpg" alt="Resultado" width="3000"/>
+  <img src="img/Res.jpg" alt="Resultado" width="1500"/>
 </p>
 <br>
 <br>
