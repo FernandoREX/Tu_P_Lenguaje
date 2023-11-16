@@ -89,22 +89,65 @@ def p_programa(p):
     'programa : declaraciones'
 ```
 * Esta regla establece que un programa (programa) está compuesto por una secuencia de declaraciones (declaraciones). La parte entre comillas simples ('programa : declaraciones') es la definición de la regla en términos de la gramática del lenguaje
+
+1. Esta regla define el punto de entrada para el análisis sintáctico (inicio). Establece que un programa comienza con la regla principal. Cuando se alcanza esta regla, imprime "Aceptado"
 ```python
-# Reglas de producción
-def p_programa(p):
-    'programa : declaraciones'
-def p_declaraciones(p):
-    'declaraciones : declaracion SALTO_DE_LINEA'
-def p_declaracion(p):
-    '''declaracion : declaracion_variable
-                   | declaracion_funcion'''
-def p_declaracion_variable(p):
-    'declaracion_variable : tipo VARIABLE DELIMITADOR'
-def p_tipo(p):
-    '''tipo : ENTERO
-            | BULEANO
-            | FLOTANTE'''
-# Resto de las reglas de producción...
+def p_inicio(p):
+    '''inicio : principal'''
+    print("Aceptado")
+```
+2. Esta regla define las posibles construcciones que pueden aparecer en la parte principal del código. Puede ser una variable de declaración, una variable de asignación o una expresión aritmética. La recursividad permite la presencia de múltiples instrucciones en la parte principal del programa
+```python
+def p_principal(p):
+    '''principal : variable_declaracion principal
+                 | variable_asignacion principal
+                 | exp_aritmetica principal
+                 | variable_declaracion
+                 | variable_asignacion 
+                 | exp_aritmetica '''
+```
+3. Esta regla define cómo se debe declarar una variable. Reconoce la palabra clave ENTERO, FLOTANTE o BULEANO, seguida de un identificador (ID) y un delimitador (DELIMITADOR). Dependiendo del tipo de variable, imprime un mensaje indicando la declaración y el identificador
+```python
+def p_variable_declaracion(p):
+    '''variable_declaracion : ENTERO ID DELIMITADOR
+                            | FLOTANTE ID DELIMITADOR
+                            | BULEANO ID DELIMITADOR'''
+```
+4. Esta regla define cómo se debe realizar la asignación de variables. Puede asignar un número o el valor de otra variable a una variable existente. Imprime un mensaje indicando la asignación
+```python
+def p_variable_asignacion(p):
+    '''variable_asignacion : ID ASIGNACION NUMERO DELIMITADOR
+                          | ID ASIGNACION ID DELIMITADOR'''
+```
+5. Esta regla define la estructura de una expresión aritmética. Imprime un mensaje indicando la presencia de una expresión aritmética
+```python
+def p_exp_aritmetica(p):
+    '''exp_aritmetica : expresion DELIMITADOR'''
+```
+6. Esta regla define las diferentes formas en que pueden aparecer expresiones, incluyendo sumas y restas. Se basa en la regla de expresiones aritméticas
+```python
+def p_expresion(p):
+    '''expresion : expresion SUMA termino
+                 | expresion MENOS termino
+                 | termino'''
+```
+7. Esta regla define cómo se deben combinar términos en expresiones. Puede incluir multiplicación o división
+```python
+def p_termino(p):
+    '''termino : termino MULTIPLICACION factor
+                | termino ENTRE factor
+                | factor'''
+```
+8. Esta regla define los factores que pueden aparecer en expresiones. Puede ser un número o una expresión entre paréntesis
+```python
+def p_factor(p):
+    '''factor : NUMERO 
+               | PARENTESIS_IZQ expresion PARENTESIS_DER'''
+```
+9. Esta regla maneja errores sintácticos e imprime un mensaje indicando el tipo de error y el token involucrado
+```python
+def p_error(p):
+    print(f"Error de sintaxis en el token: {p}")
 ```
 
 ## 5. Gramática
