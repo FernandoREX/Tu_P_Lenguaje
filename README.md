@@ -12,7 +12,7 @@
 
 En este repositorio se subirán los entregables de la materia de compiladores.
 
-El objetivo es crear un compilador de un lenguaje de programación llamado "Tu_P_L", lenguaje que usa el idoma español.
+El objetivo es crear un compilador de un lenguaje de programación llamado "Tu_P_L", lenguaje que usa el idioma español.
 Al final del curso se podrá compilar y ejecutar código fuente escrito en este lenguaje.
 
 
