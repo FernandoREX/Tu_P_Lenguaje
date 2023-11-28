@@ -5,6 +5,7 @@ tokens = Analizador_LEXICO_V2.tokens
 def p_inicio(p):
     '''inicio : principal'''
     print("Aceptado")
+    p[0] = program(p[1], "program")
 
 def p_principal(p):
     '''principal    : variable_declaracion principal
@@ -13,6 +14,8 @@ def p_principal(p):
                     | variable_declaracion
                     | variable_asignacion 
                     | exp_aritmetica '''
+
+    p[0] = block(p[1], )
 
 def p_variable_declaracion(p):
     '''variable_declaracion     : ENTERO ID DELIMITADOR
@@ -67,6 +70,12 @@ data='''entero .|.x ;
 yacc.yacc()
 a = yacc.parse(data) #devuelve un AST
 
+#result.imprimir(" ")
+#print result.traducir()
+
+#graphFile = open('graphviztrhee.vz', 'w')
+#graphFile.write(result.traducir())
+#graphFile.close()
 
  
 
